@@ -6,7 +6,7 @@ import {
 
 const initialState = {
   loading: false,
-  coupons: [],
+  couponList: [],
 };
 
 function reducer(state = initialState, action) {
@@ -17,7 +17,7 @@ function reducer(state = initialState, action) {
     case COUPON_LIST_FAILURE:
       return { ...state, coupons: [], loading: false };
     case COUPON_LIST_SUCCESS:
-      return { ...state, coupons: payload, loading: false };
+      return { ...state, couponList: payload, loading: false };
     default:
       return { ...state };
   }
