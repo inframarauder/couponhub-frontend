@@ -1,6 +1,8 @@
 import {
   AUTH_FAILURE,
   AUTH_SUCCESS,
+  VERIFICATION_FAILURE,
+  VERIFICATION_SUCCESS,
   SET_LOADING,
   LOGOUT,
 } from "../actionTypes";
@@ -22,6 +24,9 @@ export default function (state = initialState, action) {
       return { ...state, loading: false, user: payload.user, isLoggedIn: true };
     case LOGOUT:
       return { ...state, user: null, isLoggedIn: false };
+    case VERIFICATION_SUCCESS:
+      return { ...state, user: payload.user };
+    case VERIFICATION_FAILURE:
     default:
       return { ...state };
   }

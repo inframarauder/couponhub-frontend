@@ -9,6 +9,13 @@ const Header = ({ auth, logout }) => {
     window.location.href = "/";
   };
 
+  const shouldShowAlert = () => {
+    const { isEmailVerified } = auth.user;
+    const isVerificationPage = window.location.href.includes("verification");
+
+    return !isEmailVerified && !isVerificationPage;
+  };
+
   return auth.isLoggedIn ? (
     <>
       <Navbar bg="dark" variant="dark">
@@ -30,12 +37,19 @@ const Header = ({ auth, logout }) => {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-      {!auth.user.isEmailVerified && (
-        <Alert variant="warning" className="center-content">
-          Please verify your email to sell or buy coupons.
-          <br />
-          <Button variant="primary">Verify Now!</Button>
-        </Alert>
+      {shouldShowAlert() && (
+        <>
+          <Alert variant="warning" className="center-content">
+            Please verify your email to sell or buy coupons.
+            <br />
+            <Button
+              variant="primary"
+              onClick={() => (window.location.href = "/verification")}
+            >
+              Verify Now!
+            </Button>
+          </Alert>
+        </>
       )}
     </>
   ) : (
