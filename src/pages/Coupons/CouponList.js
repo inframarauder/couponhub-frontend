@@ -7,8 +7,6 @@ import { Spinner } from "../../components";
 const CouponList = ({ coupons, listCoupons }) => {
   useEffect(() => listCoupons(), [listCoupons]);
 
-  console.log(coupons.couponList);
-
   return coupons.loading ? (
     <Spinner />
   ) : (
@@ -18,6 +16,9 @@ const CouponList = ({ coupons, listCoupons }) => {
       </legend>
       {coupons.couponList.map((coupon) => (
         <Card key={coupon._id} bg="dark" text="white" className="my-4">
+          <Card.Header>
+            <small>{coupon.type.toUpperCase()}</small>
+          </Card.Header>
           <Card.Body>
             <Card.Title>{coupon.title}</Card.Title>
             <Card.Text>{coupon.description}</Card.Text>

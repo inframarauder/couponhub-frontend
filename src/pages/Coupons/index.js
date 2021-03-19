@@ -1,13 +1,22 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import FilterForm from "./FilterForm";
 import CouponList from "./CouponList";
 
 const Coupons = () => {
   return (
     <Container className="my-4 h-100">
-      <FilterForm />
-      <CouponList />
+      <Row>
+        <Col sm="4">
+          <FilterForm />
+        </Col>
+        <Col sm="8">
+          <legend className="text-center">
+            Available Coupons <hr />
+          </legend>
+          <CouponList />
+        </Col>
+      </Row>
     </Container>
   );
 };
