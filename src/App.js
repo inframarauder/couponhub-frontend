@@ -11,6 +11,7 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Verification from "./pages/Verification";
 import Coupons from "./pages/Coupons";
+import MyCoupons from "./pages/MyCoupons";
 
 function App() {
   useEffect(() => {
@@ -33,6 +34,7 @@ function App() {
                 component={Verification}
               />
               <PrivateRoute path="/coupons" exact component={Coupons} />
+              <PrivateRoute path="/my_coupons" exact component={MyCoupons} />
               <Route component={NotFound} />
             </Switch>
             <Footer />

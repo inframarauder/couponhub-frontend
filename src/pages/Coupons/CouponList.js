@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { toast } from "react-toastify";
-import { Card, Button, Modal } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 import { listCoupons } from "../../redux/actions/coupons.actions";
 import { Spinner } from "../../components";
 import api from "../../utils/api";
