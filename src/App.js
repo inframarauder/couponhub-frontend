@@ -8,6 +8,7 @@ import { Header, Footer, NotFound, Spinner } from "./components";
 import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   useEffect(() => {
@@ -19,6 +20,7 @@ function App() {
         <PersistGate loading={Spinner} persistor={persistor}>
           <Router>
             <Header />
+            <ToastContainer />
             <Switch>
               <Route path="/" exact component={Home} />
               <Route path="/signup" exact component={Signup} />
