@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { Container, Row, Col, Card } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { toast } from "react-toastify";
 import { connect } from "react-redux";
 import api from "../../utils/api";
-import { Spinner } from "../../components/";
+import { Spinner, CouponCard } from "../../components/";
 
 const MyCoupons = ({ auth }) => {
   const [state, setState] = useState({
@@ -26,7 +26,7 @@ const MyCoupons = ({ auth }) => {
       }
       setState((state) => ({ ...state, loading: false }));
     }
-  }, []);
+  }, [auth.user._id]);
 
   useEffect(() => loadMyCoupons(), [loadMyCoupons]);
 
@@ -39,26 +39,8 @@ const MyCoupons = ({ auth }) => {
       </legend>
       <Row>
         {state.coupons.map((coupon) => (
-          <Col key={coupon._id} sm="4">
-            <Card className="my-4" key={coupon._id} bg="dark" text="white">
-              <Card.Header>
-                <Card.Text>
-                  <h5>{coupon.title}</h5>
-                </Card.Text>
-                <small>{coupon.type.toUpperCase()}</small>
-              </Card.Header>
-              <Card.Body>
-                <Card.Title>{coupon.code}</Card.Title>
-                <Card.Text>{coupon.description}</Card.Text>
-                <Card.Text>
-                  Expires On - {new Date(coupon.expiryDate).toDateString()}
-                </Card.Text>
-                <Card.Text>
-                  Posted By -{" "}
-                  {coupon.postedBy ? coupon.postedBy.name : "Deleted User"}
-                </Card.Text>
-              </Card.Body>{" "}
-            </Card>
+          <Col key={coupon._id} sm="6">
+            <CouponCard coupon={coupon} />
           </Col>
         ))}
       </Row>

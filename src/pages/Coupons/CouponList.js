@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { toast } from "react-toastify";
-import { Card, Button } from "react-bootstrap";
 import { listCoupons } from "../../redux/actions/coupons.actions";
-import { Spinner } from "../../components";
+import { Spinner, CouponCard } from "../../components";
 import api from "../../utils/api";
 
 const CouponList = ({ coupons, listCoupons }) => {
@@ -46,30 +45,12 @@ const CouponList = ({ coupons, listCoupons }) => {
   ) : (
     <>
       <legend className="text-center">
-        {coupons.couponList.length} coupons found...
+        {coupons.couponList.length} coupon(s) found...
       </legend>
       {coupons.couponList.map((coupon) => (
-        <Card className="my-4" key={coupon._id} bg="dark" text="white">
-          <Card.Header>
-            <small>{coupon.type.toUpperCase()}</small>
-          </Card.Header>
-          <Card.Body>
-            <Card.Title>{coupon.title}</Card.Title>
-            <Card.Text>{coupon.description}</Card.Text>
-            <Card.Text>
-              Expires On - {new Date(coupon.expiryDate).toDateString()}
-            </Card.Text>
-            <Card.Text>
-              Posted By -{" "}
-              {coupon.postedBy ? coupon.postedBy.name : "Deleted User"}
-            </Card.Text>
-          </Card.Body>{" "}
-          <Card.Footer>
-            <Button variant="success" onClick={() => handleBuy(coupon._id)}>
-              Buy
-            </Button>
-          </Card.Footer>
-        </Card>
+        <div key={coupon._id}>
+          <CouponCard coupon={coupon} showBuy={true} handleBuy={handleBuy} />
+        </div>
       ))}
     </>
   );
