@@ -11,13 +11,14 @@ const Header = ({ auth, logout }) => {
 
   const shouldShowAlert = () => {
     const isVerificationPage = window.location.href.includes("verification");
+    const isEmailVerified = auth.user?.isEmailVerified;
 
-    return !auth.user?.isEmailVerified && !isVerificationPage;
+    return (isEmailVerified && isEmailVerified === false) || isVerificationPage;
   };
 
   return auth.isLoggedIn ? (
     <>
-      <Navbar expand="lg" bg="dark" variant="dark">
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Navbar.Brand href="/">CouponHub</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />{" "}
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -47,15 +48,13 @@ const Header = ({ auth, logout }) => {
                   <small>({auth.user?.email})</small>
                 </Dropdown.Item>
                 <Dropdown.Item>Cerdits : {auth.user?.credits}</Dropdown.Item>
-                <Dropdown.Item>
-                  <Button
-                    variant="secondary"
-                    size="sm"
-                    onClick={() => handleLogout()}
-                  >
-                    Logout
-                  </Button>
-                </Dropdown.Item>
+                <Button
+                  variant="secondary"
+                  size="sm"
+                  onClick={() => handleLogout()}
+                >
+                  Logout
+                </Button>
               </Dropdown.Menu>
             </Dropdown>{" "}
           </Nav>

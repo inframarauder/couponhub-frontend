@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Container, Jumbotron, Form, Button } from "react-bootstrap";
 import { signup } from "../../redux/actions/auth.actions";
 import { Redirect } from "react-router-dom";
+import { Spinner } from "../../components";
 
 const Signup = ({ auth, signup }) => {
   const [formData, setFormData] = useState({
@@ -20,7 +21,9 @@ const Signup = ({ auth, signup }) => {
     signup(formData);
   };
 
-  return auth.isLoggedIn ? (
+  return auth.loading ? (
+    <Spinner />
+  ) : auth.isLoggedIn ? (
     <Redirect to="/coupons" />
   ) : (
     <Container className="h-100">
