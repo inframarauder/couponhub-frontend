@@ -1,11 +1,45 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { Card, Button } from "react-bootstrap";
+import { toast } from "react-toastify";
+import { Card, Button, Modal } from "react-bootstrap";
 import { listCoupons } from "../../redux/actions/coupons.actions";
 import { Spinner } from "../../components";
+import api from "../../utils/api";
 
 const CouponList = ({ coupons, listCoupons }) => {
   useEffect(() => listCoupons(), [listCoupons]);
+
+  const successToast = (code) => (
+    <div className="text-center">
+      <p>Success! Your coupon code is - </p>
+      <p>
+        <h5>{code}</h5>
+      </p>
+      <p>You can view this coupon in the 'My Coupons' section.</p>
+    </div>
+  );
+  const handleBuy = async (couponId) => {
+    const isConfirmed = window.confirm(
+      "Are you sure you want to buy this coupon?"
+    );
+    if (isConfirmed) {
+      try {
+        const { data } = await api.buyCoupon({ couponId });
+        toast.success(successToast(data.code), {
+          position: toast.POSITION.TOP_CENTER,
+          autoClose: false,
+          draggable: false,
+          closeOnClick: false,
+        });
+        listCoupons();
+      } catch (error) {
+        console.error(error);
+        if (error.response) {
+          toast.error(error.response.data.error);
+        }
+      }
+    }
+  };
 
   return coupons.loading ? (
     <Spinner />
@@ -15,7 +49,7 @@ const CouponList = ({ coupons, listCoupons }) => {
         {coupons.couponList.length} coupons found...
       </legend>
       {coupons.couponList.map((coupon) => (
-        <Card key={coupon._id} bg="dark" text="white" className="my-4">
+        <Card className="my-4" key={coupon._id} bg="dark" text="white">
           <Card.Header>
             <small>{coupon.type.toUpperCase()}</small>
           </Card.Header>
@@ -25,11 +59,15 @@ const CouponList = ({ coupons, listCoupons }) => {
             <Card.Text>
               Expires On - {new Date(coupon.expiryDate).toDateString()}
             </Card.Text>
-            <Button variant="success">Buy</Button>
-          </Card.Body>
+            <Card.Text>
+              Posted By -{" "}
+              {coupon.postedBy ? coupon.postedBy.name : "Deleted User"}
+            </Card.Text>
+          </Card.Body>{" "}
           <Card.Footer>
-            Posted By -{" "}
-            {coupon.postedBy ? coupon.postedBy.name : "Deleted User"}
+            <Button variant="success" onClick={() => handleBuy(coupon._id)}>
+              Buy
+            </Button>
           </Card.Footer>
         </Card>
       ))}

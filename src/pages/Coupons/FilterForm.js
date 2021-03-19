@@ -32,7 +32,7 @@ const FilterForm = ({ listCoupons }) => {
             type="text"
             placeholder="Search by platform name, title, description"
             as="input"
-            htmlSize="100"
+            htmlSize="80"
             name="searchText"
             value={formData.searchText}
             onChange={handleChange}
