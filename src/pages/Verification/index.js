@@ -1,40 +1,56 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { Container, Form, Button } from "react-bootstrap";
-import { verifyEmail } from "../../redux/actions/auth.actions";
+import { toast } from "react-toastify";
 import api from "../../utils/api";
+import { Spinner } from "../../components";
 
-const Verification = ({ auth, verifyEmail }) => {
-  useEffect(() => !auth.user.isEmailVerified && api.sendVerifiationEmail(), [
-    auth.user.isEmailVerified,
+const Verification = ({ auth }) => {
+  useEffect(() => !auth.user?.isEmailVerified && api.sendVerifiationEmail(), [
+    auth.user?.isEmailVerified,
   ]);
 
   const [formData, setFormData] = useState({ code: "" });
+  const [loading, setLoding] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: Number(e.target.value) });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    verifyEmail(formData);
+    setLoding(true);
+    try {
+      const { data } = await api.verifyEmail(formData);
+      toast.success(data.message);
+      localStorage.setItem("token", data.token); //reset jwt with updated token
+      window.location.reload();
+    } catch (error) {
+      console.error(error);
+      if (error.response) {
+        toast.error(error.response.data.error);
+      }
+    }
+    setLoding(false);
   };
 
   const handleResend = () => {
     window.location.reload();
   };
 
-  return auth.user.isEmailVerified ? (
+  return auth.user?.isEmailVerified ? (
     <Container className="h-100 my-4">
       <p className="text-center display-4">Your email is verified</p>
       <p className="text-center">
         <a href="/coupons">Back to coupons</a>
       </p>
     </Container>
+  ) : loading ? (
+    <Spinner />
   ) : (
     <Container className="h-100 my-4">
       <legend className="text-center">
-        Verification code sent to {auth.user.email}
+        Verification code sent to {auth.user?.email}
       </legend>
       <Form className="center-content" onSubmit={handleSubmit}>
         <Form.Group>
@@ -59,8 +75,5 @@ const Verification = ({ auth, verifyEmail }) => {
 };
 
 const mapStateToProps = (state) => ({ auth: state.auth });
-const mapDispatchToProps = (dispatch) => ({
-  verifyEmail: (body) => dispatch(verifyEmail(body)),
-});
 
-export default connect(mapStateToProps, mapDispatchToProps)(Verification);
+export default connect(mapStateToProps, null)(Verification);

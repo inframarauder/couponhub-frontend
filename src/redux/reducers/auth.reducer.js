@@ -1,8 +1,8 @@
 import {
   AUTH_FAILURE,
   AUTH_SUCCESS,
-  VERIFICATION_FAILURE,
-  VERIFICATION_SUCCESS,
+  USER_FETCH_FAILURE,
+  USER_FETCH_SUCCESS,
   SET_LOADING,
   LOGOUT,
 } from "../actionTypes";
@@ -21,12 +21,13 @@ function reducer(state = initialState, action) {
     case AUTH_FAILURE:
       return { ...state, loading: false };
     case AUTH_SUCCESS:
-      return { ...state, loading: false, user: payload.user, isLoggedIn: true };
+      return { ...state, loading: false, isLoggedIn: true };
     case LOGOUT:
       return { ...state, user: null, isLoggedIn: false };
-    case VERIFICATION_SUCCESS:
-      return { ...state, user: payload.user };
-    case VERIFICATION_FAILURE:
+    case USER_FETCH_SUCCESS:
+      return { ...state, user: payload, loading: false };
+    case USER_FETCH_FAILURE:
+      return { ...state, user: null, loading: false };
     default:
       return { ...state };
   }

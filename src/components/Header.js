@@ -10,19 +10,18 @@ const Header = ({ auth, logout }) => {
   };
 
   const shouldShowAlert = () => {
-    const { isEmailVerified } = auth.user;
     const isVerificationPage = window.location.href.includes("verification");
 
-    return !isEmailVerified && !isVerificationPage;
+    return !auth.user?.isEmailVerified && !isVerificationPage;
   };
 
   return auth.isLoggedIn ? (
     <>
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Navbar expand="lg" bg="dark" variant="dark">
         <Navbar.Brand href="/">CouponHub</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />{" "}
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ml-auto">
+          <Nav className="ml-auto mr-4">
             <Nav.Link href="/coupons" active>
               Browse Coupons
             </Nav.Link>

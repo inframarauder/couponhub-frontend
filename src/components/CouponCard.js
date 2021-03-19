@@ -6,12 +6,12 @@ const CouponCard = ({ coupon, showBuy, handleBuy }) => {
     <Card className="my-4" bg="dark" text="white">
       <Card.Header>
         <Card.Text>
-          <h5>
+          <span>
             {coupon.title}
             <small style={{ float: "right" }}>
               {coupon.type.toUpperCase()}
             </small>
-          </h5>
+          </span>
         </Card.Text>
       </Card.Header>
       <Card.Body>
