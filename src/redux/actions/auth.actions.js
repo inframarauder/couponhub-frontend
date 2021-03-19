@@ -1,4 +1,9 @@
-import { SET_LOADING, AUTH_FAILURE, AUTH_SUCCESS } from "../actionTypes";
+import {
+  SET_LOADING,
+  AUTH_FAILURE,
+  AUTH_SUCCESS,
+  LOGOUT,
+} from "../actionTypes";
 import api from "../../utils/api";
 import errorHandler from "../../utils/errorHandler";
 
@@ -32,4 +37,9 @@ export const checkAuth = () => (dispatch) => {
     const user = localStorage.getItem("user");
     dispatch({ type: AUTH_SUCCESS, payload: { user: JSON.parse(user) } });
   }
+};
+
+export const logout = () => (dispatch) => {
+  localStorage.clear();
+  dispatch({ type: LOGOUT });
 };
