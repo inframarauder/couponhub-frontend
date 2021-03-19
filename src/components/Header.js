@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { logout } from "../redux/actions/auth.actions";
-import { Alert, Button, Navbar, Nav } from "react-bootstrap";
+import { Alert, Button, Navbar, Nav, Dropdown } from "react-bootstrap";
 
 const Header = ({ auth, logout }) => {
   const handleLogout = () => {
@@ -21,7 +21,7 @@ const Header = ({ auth, logout }) => {
         <Navbar.Brand href="/">CouponHub</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />{" "}
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ml-auto mr-4">
+          <Nav className="mr-4">
             <Nav.Link href="/coupons" active>
               Browse Coupons
             </Nav.Link>
@@ -31,18 +31,33 @@ const Header = ({ auth, logout }) => {
             <Nav.Link href="/post_coupon" active>
               Post a Coupon
             </Nav.Link>
-            <Nav.Link href="/profile" active>
-              Profile
-            </Nav.Link>
-            <Nav.Link>
-              <Button
-                variant="secondary"
-                size="sm"
-                onClick={() => handleLogout()}
-              >
-                Logout
-              </Button>
-            </Nav.Link>
+          </Nav>
+          <Nav className="ml-auto mr-4">
+            <Dropdown drop="left">
+              <Dropdown.Toggle id="dropdown-basic">
+                {<i className="fa fa-user"></i>}
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu>
+                <Dropdown.Item>
+                  Logged in as:
+                  <br />
+                  <strong>{auth.user?.name}</strong>
+                  <br />
+                  <small>({auth.user?.email})</small>
+                </Dropdown.Item>
+                <Dropdown.Item>Cerdits : {auth.user?.credits}</Dropdown.Item>
+                <Dropdown.Item>
+                  <Button
+                    variant="secondary"
+                    size="sm"
+                    onClick={() => handleLogout()}
+                  >
+                    Logout
+                  </Button>
+                </Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>{" "}
           </Nav>
         </Navbar.Collapse>
       </Navbar>

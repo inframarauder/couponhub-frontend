@@ -16,7 +16,7 @@ const MyCoupons = ({ auth }) => {
     try {
       const { data } = await api.listCoupons({
         status: "sold",
-        soldTo: auth.user._id,
+        soldTo: auth.user?._id,
       });
       setState((state) => ({ ...state, coupons: data, loading: false }));
     } catch (error) {
@@ -26,7 +26,7 @@ const MyCoupons = ({ auth }) => {
       }
       setState((state) => ({ ...state, loading: false }));
     }
-  }, [auth.user._id]);
+  }, [auth.user?._id]);
 
   useEffect(() => loadMyCoupons(), [loadMyCoupons]);
 
