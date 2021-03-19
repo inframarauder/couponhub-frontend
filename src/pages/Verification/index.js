@@ -5,7 +5,9 @@ import { verifyEmail } from "../../redux/actions/auth.actions";
 import api from "../../utils/api";
 
 const Verification = ({ auth, verifyEmail }) => {
-  useEffect(() => !auth.user.isEmailVerified && api.sendVerifiationEmail(), []);
+  useEffect(() => !auth.user.isEmailVerified && api.sendVerifiationEmail(), [
+    auth.user.isEmailVerified,
+  ]);
 
   const [formData, setFormData] = useState({ code: "" });
 
@@ -26,7 +28,7 @@ const Verification = ({ auth, verifyEmail }) => {
     <Container className="h-100 my-4">
       <p className="text-center display-4">Your email is verified</p>
       <p className="text-center">
-        <a href="/coupon">Back to coupons</a>
+        <a href="/coupons">Back to coupons</a>
       </p>
     </Container>
   ) : (

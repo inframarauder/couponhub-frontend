@@ -30,7 +30,7 @@ const apiCalls = {
   //coupon apis
 
   createCoupon: (body) => api.post(`/coupons/create`, body),
-  listCoupons: (filters) => api.get(`/coupons/list`, { params: filters }),
+  listCoupons: (filters = {}) => api.get(`/coupons/list`, { params: filters }),
   buyCoupon: (body) => api.put(`/coupons/buy`, body),
 };
 

@@ -13,7 +13,7 @@ const initialState = {
   isLoggedIn: false,
 };
 
-export default function (state = initialState, action) {
+function reducer(state = initialState, action) {
   const { type, payload } = action;
   switch (type) {
     case SET_LOADING:
@@ -31,3 +31,5 @@ export default function (state = initialState, action) {
       return { ...state };
   }
 }
+
+export default reducer;
