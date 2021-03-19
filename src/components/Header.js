@@ -13,7 +13,7 @@ const Header = ({ auth, logout }) => {
     const isVerificationPage = window.location.href.includes("verification");
     const isEmailVerified = auth.user?.isEmailVerified;
 
-    return (isEmailVerified && isEmailVerified === false) || isVerificationPage;
+    return !auth.loading && (!isEmailVerified || isVerificationPage);
   };
 
   return auth.isLoggedIn ? (
