@@ -17,7 +17,7 @@ api.interceptors.request.use(
   }
 );
 
-export default {
+const apiCalls = {
   //user apis:
 
   signup: (body) => api.post(`/users/signup`, body),
@@ -33,3 +33,5 @@ export default {
   listCoupons: (filters) => api.get(`/coupons/list`, { params: filters }),
   buyCoupon: (body) => api.put(`/coupons/buy`, body),
 };
+
+export default apiCalls;

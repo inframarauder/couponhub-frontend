@@ -1,6 +1,7 @@
 import Header from "./Header";
 import Footer from "./Footer";
-import BrandBadge from "./BrandBadge";
+import Spinner from "./Spinner";
 import NotFound from "./NotFound";
+import BrandBadge from "./BrandBadge";
 
-export { Header, Footer, BrandBadge, NotFound };
+export { Header, Footer, Spinner, NotFound, BrandBadge };

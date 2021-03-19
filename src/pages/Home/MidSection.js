@@ -1,5 +1,6 @@
 import React from "react";
 import { Jumbotron, Button, Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const MidSection = () => {
   return (
@@ -17,7 +18,7 @@ const MidSection = () => {
           </Button>
         </p>
         <p>
-          Already have an account? &nbsp;<a href="/login">Log In</a>
+          Already have an account? &nbsp;<Link to="/login">Log In</Link>
         </p>
       </Container>
     </Jumbotron>
