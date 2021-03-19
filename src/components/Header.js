@@ -18,14 +18,23 @@ const Header = ({ auth, logout }) => {
 
   return auth.isLoggedIn ? (
     <>
-      <Navbar bg="dark" variant="dark">
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Navbar.Brand href="/">CouponHub</Navbar.Brand>
-        <Navbar.Toggle />
-        <Navbar.Collapse>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />{" "}
+        <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ml-auto">
-            <Nav.Link href="/profile">Profile</Nav.Link>
-            <Nav.Link href="/coupons">Browse Coupons</Nav.Link>
-
+            <Nav.Link href="/coupons" active>
+              Browse Coupons
+            </Nav.Link>
+            <Nav.Link href="/my_coupons" active>
+              My Coupons
+            </Nav.Link>
+            <Nav.Link href="/post_coupon" active>
+              Post a Coupon
+            </Nav.Link>
+            <Nav.Link href="/profile" active>
+              Profile
+            </Nav.Link>
             <Nav.Link>
               <Button
                 variant="secondary"
