@@ -1,5 +1,5 @@
 import React from "react";
-import BrandBadge from "../../components/BrandBadge";
+import { BrandBadge } from "../../components/";
 import { Container, Row, Col } from "react-bootstrap";
 
 const brands = [
