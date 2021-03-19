@@ -33,3 +33,11 @@
 .w-100 {
   min-width: 100%;
 }
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
