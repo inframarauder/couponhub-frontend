@@ -6,9 +6,13 @@ import api from "../../utils/api";
 import { Spinner } from "../../components";
 
 const Verification = ({ auth }) => {
-  useEffect(() => !auth.user?.isEmailVerified && api.sendVerifiationEmail(), [
-    auth.user?.isEmailVerified,
-  ]);
+  useEffect(
+    () =>
+      !auth.loading &&
+      !auth.user?.isEmailVerified &&
+      api.sendVerifiationEmail(),
+    [auth.user?.isEmailVerified, auth.loading]
+  );
 
   const [formData, setFormData] = useState({ code: "" });
   const [loading, setLoding] = useState(false);
