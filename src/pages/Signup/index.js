@@ -21,7 +21,7 @@ const Signup = ({ auth, signup }) => {
   };
 
   return auth.isLoggedIn ? (
-    <Redirect to="/" />
+    <Redirect to="/coupons" />
   ) : (
     <Container className="h-100">
       <Jumbotron className="my-4">

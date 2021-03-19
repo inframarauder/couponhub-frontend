@@ -23,8 +23,9 @@ const Header = ({ auth, logout }) => {
         <Navbar.Toggle />
         <Navbar.Collapse>
           <Nav className="ml-auto">
-            <Navbar.Text>Signed in as: {auth.user.email}</Navbar.Text>
             <Nav.Link href="/profile">Profile</Nav.Link>
+            <Nav.Link href="/coupons">Browse Coupons</Nav.Link>
+
             <Nav.Link>
               <Button
                 variant="secondary"
