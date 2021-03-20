@@ -207,12 +207,6 @@ textarea {
   width: 60% !important;
 }
 
-@media (min-width: 320px) and (max-width: 480px) {
-  .form-coupon-add {
-    width: 85% !important;
-  }
-}
-
 .form_button_coupon {
   background-color: rgb(93, 75, 255) !important;
   border: none !important;
@@ -224,4 +218,46 @@ textarea {
 
 .form_button_coupon:hover {
   background-color: rgb(41, 18, 247) !important;
+}
+
+.alert-box {
+  background-color: rgb(93, 75, 255) !important ;
+  border: none !important;
+  color: white !important;
+  font-size: 20px !important;
+  width: 80% !important;
+  padding: 10px 20px !important;
+  margin: 20px auto !important;
+  border-radius: 4px !important;
+
+  /* display: flow-root!important; */
+}
+
+.alert-box button {
+  background-color: rgb(60, 45, 190) !important;
+  border: none !important;
+  margin-top: 10px !important;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .form-coupon-add {
+    width: 85% !important;
+  }
+
+  .alert-box {
+    width: 90% !important;
+  }
+}
+
+.submit_button,
+.resend_button {
+  background-color: rgb(78, 62, 223) !important;
+  border: none !important;
+  padding: 10px 25px !important;
+  margin: 10px !important;
+  font-weight: 700 !important;
+}
+
+.resend_button {
+  background-color: rgb(255, 167, 66) !important;
 }

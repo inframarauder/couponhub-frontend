@@ -44,21 +44,55 @@ const Verification = ({ auth }) => {
 
   return auth.user?.isEmailVerified ? (
     <Container className="h-100 my-4">
-      <p className="text-center display-4">Your email is verified</p>
-      <p className="text-center">
-        <a href="/coupons">Back to coupons</a>
+      <p
+        className="text-center"
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <img
+          src="https://media.giphy.com/media/6nZYNpm9icrCm7eAoF/giphy.gif"
+          width="150px"
+          style={{ float: "right" }}
+        />
+        <p
+          className="text-center display-4"
+          style={{ marginTop: "10px", fontSize: "35px" }}
+        >
+          🎊 Your email is verified
+        </p>
+        <br />
+        <a href="/coupons">
+          <Button className="submit_button">Back to Coupons 😃</Button>
+        </a>
       </p>
     </Container>
   ) : loading ? (
     <Spinner />
   ) : (
-    <Container className="h-100 my-4">
-      <legend className="text-center">
-        Verification code sent to {auth.user?.email}
+    <Container
+      className="h-100 my-4"
+      style={{
+        marginTop: "30px",
+      }}
+    >
+      <legend className="text-center alert-box-2">
+        🥝 Verification code sent to{" "}
+        <u
+          style={{
+            color: "rgb(255, 208, 121)",
+          }}
+        >
+          {auth.user?.email}
+        </u>
       </legend>
+      <hr />
       <Form className="center-content" onSubmit={handleSubmit}>
         <Form.Group>
-          <Form.Label>Enter the code</Form.Label>
+          <Form.Label>🍄 Enter the code</Form.Label>
           <Form.Control
             type="number"
             name="code"
@@ -66,13 +100,22 @@ const Verification = ({ auth }) => {
             onChange={handleChange}
           />
         </Form.Group>
-        <Button type="submit" variant="primary">
-          Submit
-        </Button>
-        <br />
-        <Button variant="secondary" onClick={handleResend}>
-          Resend
-        </Button>
+        <div
+          style={{
+            display: "flex",
+          }}
+        >
+          <Button
+            variant="secondary"
+            className="resend_button"
+            onClick={handleResend}
+          >
+            Resend
+          </Button>
+          <Button type="submit" className="submit_button">
+            Submit
+          </Button>
+        </div>
       </Form>
     </Container>
   );

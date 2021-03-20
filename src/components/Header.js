@@ -91,15 +91,26 @@ const Header = ({ auth, logout }) => {
       </Navbar>
       {shouldShowAlert() && (
         <>
-          <Alert variant="warning" className="center-content">
-            Please verify your email to sell or buy coupons.
-            <br />
-            <Button
-              variant="primary"
-              onClick={() => (window.location.href = "/verification")}
-            >
-              Verify Now!
-            </Button>
+          <Alert variant="warning" className="center-content alert-box">
+            <div className="row">
+              <div className="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                Please verify your email to sell or buy coupons.
+                <br />
+                <Button
+                  variant="primary"
+                  onClick={() => (window.location.href = "/verification")}
+                >
+                  Verify Now 😔
+                </Button>
+              </div>
+              <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                <img
+                  src="https://media.giphy.com/media/Z9hdaqcDgk79nRmZze/giphy.gif"
+                  width="100px"
+                  style={{ float: "right" }}
+                />
+              </div>
+            </div>
           </Alert>
         </>
       )}

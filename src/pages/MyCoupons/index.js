@@ -34,8 +34,16 @@ const MyCoupons = ({ auth }) => {
     <Spinner />
   ) : (
     <Container className="h-100">
-      <legend className="text-center my-4">
-        Your Coupons <hr />
+      <legend
+        className="text-center my-4"
+        style={{
+          color: "rgb(255, 208, 121)",
+          position: "relative",
+          left: "50px",
+        }}
+      >
+        🥑 <b>Your coupons</b>
+        <hr />
       </legend>
       <Row>
         {state.coupons.map((coupon) => (

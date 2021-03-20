@@ -20,7 +20,13 @@ const CouponCard = ({ coupon, showBuy, handleBuy }) => {
         <Card.Title>
           <b>{coupon.code}</b>
         </Card.Title>
-        <Card.Text>{coupon.description}</Card.Text>
+        <Card.Text
+          style={{
+            minHeight: "80px",
+          }}
+        >
+          {coupon.description}
+        </Card.Text>
         <Card.Text>
           Expires On{" "}
           <span
@@ -32,6 +38,7 @@ const CouponCard = ({ coupon, showBuy, handleBuy }) => {
               borderRadius: "5px",
               color: "white !important",
               textAlign: "center",
+              whiteSpace: "nowrap",
               fontWeight: "700",
             }}
           >
