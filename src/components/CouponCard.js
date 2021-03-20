@@ -3,7 +3,7 @@ import { Card, Button } from "react-bootstrap";
 
 const CouponCard = ({ coupon, showBuy, handleBuy }) => {
   return (
-    <Card className="my-4" bg="dark" text="white">
+    <Card className="my-4">
       <Card.Header>
         <Card.Text>
           <span>

@@ -20,11 +20,11 @@ const FilterForm = ({ listCoupons }) => {
 
   return (
     <div className="center-content search-form">
-      <legend>Filters</legend>
+      <legend className="searchBoxText">🧙 filters</legend>
 
-      <Form className="my-4" onSubmit={handleSubmit}>
-        <Form.Group>
-          <Form.Label>Search</Form.Label>
+      <Form className="my-4 search-form-inside" onSubmit={handleSubmit}>
+        <Form.Group className="search-form-inside">
+          <Form.Label>▶️ Search</Form.Label>
           <Form.Control
             type="text"
             placeholder="Search by platform name, title, description"
@@ -35,8 +35,8 @@ const FilterForm = ({ listCoupons }) => {
             onChange={handleChange}
           />
         </Form.Group>
-        <Form.Group>
-          <Form.Label>Type of discount</Form.Label>
+        <Form.Group className="search-form-inside">
+          <Form.Label>💠 Type of discount</Form.Label>
           <Form.Control as="select" name="type" onChange={handleChange} custom>
             <option value="all">All</option>
             <option value="flat">Flat</option>

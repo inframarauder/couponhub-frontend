@@ -11,9 +11,7 @@ const Coupons = () => {
           <FilterForm />
         </Col>
         <Col sm="8">
-          <legend className="text-center">
-            Available Coupons <hr />
-          </legend>
+          <legend className="searchBoxText">🤗 available coupons</legend>
           <CouponList />
         </Col>
       </Row>

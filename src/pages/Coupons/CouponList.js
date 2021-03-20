@@ -10,7 +10,7 @@ const CouponList = ({ coupons, listCoupons }) => {
 
   const successToast = (code) => (
     <div className="text-center">
-      <p>Success! Your coupon code is - </p>
+      <p>🦄😇 Your coupon code is </p>
       <p>
         <h5>{code}</h5>
       </p>
@@ -44,8 +44,8 @@ const CouponList = ({ coupons, listCoupons }) => {
     <Spinner />
   ) : (
     <>
-      <legend className="text-center">
-        {coupons.couponList.length} coupon(s) found...
+      <legend className="text-center search-results">
+        🦄😇 {coupons.couponList.length} coupon(s) found...
       </legend>
       {coupons.couponList.map((coupon) => (
         <div key={coupon._id}>

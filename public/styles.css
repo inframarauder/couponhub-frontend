@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;900&display=swap");
 
 body {
   font-family: "Nunito", sans-serif !important;
@@ -31,7 +31,7 @@ body {
 #dropdown-basic {
   background-color: rgb(73, 73, 73) !important;
   border: none !important;
-  padding: 3px !important;
+  padding: 0px !important;
 }
 
 #dropdown-basic:focus,
@@ -131,11 +131,48 @@ textarea {
 .form_button {
   background-color: rgb(44, 44, 44) !important;
   border: none !important;
+  padding: 10px 20px !important;
 }
 .form_button:hover {
   background-color: rgb(40, 122, 204) !important;
 }
 
 .search-form {
-  background-color: rgba(0, 0, 0, 0.1) !important;
+  background-color: rgb(10, 10, 10) !important;
+  padding: 10px 20px;
+  border-radius: 4px;
+  margin-bottom: 50px;
+}
+
+.search-form-inside {
+  background-color: rgb(10, 10, 10) !important;
+  font-weight: 600 !important;
+}
+
+.filter-icon {
+  font-size: 13px;
+  padding: 5px;
+  margin: 2px;
+  border-radius: 3px;
+  background-color: grey;
+}
+
+.searchBoxText {
+  color: rgb(255, 208, 121);
+  font-weight: 700;
+}
+
+.search-results {
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  padding: 10px 15px !important;
+  border-radius: 20px !important;
+  transition: all 0.3s ease !important;
+  background: rgb(20, 20, 20) !important;
+  width: 250px !important;
+  margin: 1px auto !important;
+}
+
+.card {
+  background: rgb(20, 20, 20) !important;
 }

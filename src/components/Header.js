@@ -82,7 +82,7 @@ const Header = ({ auth, logout }) => {
                   className="Logout_button dropdown_link"
                   onClick={() => handleLogout()}
                 >
-                  Logout
+                  Logout &nbsp;&nbsp;<i class="fas fa-radiation"></i>
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>{" "}
