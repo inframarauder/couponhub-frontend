@@ -16,7 +16,7 @@ const Footer = () => {
             width="20px"
             alt="Y Combinator Logo"
           />{" "}
-          <b style={{ color: "#f16117" }}>Combinator</b> company
+          <span style={{ color: "#f16117" }}>Combinator</span> company
         </span>
         <br />
       </div>

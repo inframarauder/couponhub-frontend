@@ -11,15 +11,23 @@ const CouponList = ({ coupons, listCoupons }) => {
   const successToast = (code) => (
     <div className="text-center">
       <p>🦄😇 Your coupon code is </p>
+      <hr />
+      <h5>
+        <b>{code}</b>
+      </h5>
+      <hr />
       <p>
-        <h5>{code}</h5>
+        You can view this coupon in the 'My Coupons' section{" "}
+        <img
+          src="https://media.giphy.com/media/w6YCfXHS6QZjeHlVpI/giphy.gif"
+          width="30px"
+        />
       </p>
-      <p>You can view this coupon in the 'My Coupons' section.</p>
     </div>
   );
   const handleBuy = async (couponId) => {
     const isConfirmed = window.confirm(
-      "Are you sure you want to buy this coupon?"
+      "🤠 Are you sure you want to buy this coupon?"
     );
     if (isConfirmed) {
       try {

@@ -57,9 +57,14 @@ body {
 }
 
 .buy_button {
-  background-color: #007bff !important;
-  padding: 6px 40px !important;
+  background-color: rgb(44, 44, 44) !important;
+  padding: 10px 20px !important;
   border: none !important;
+  width: 100%;
+}
+
+.buy_button:hover {
+  background-color: rgb(40, 122, 204) !important;
 }
 
 input {
@@ -178,5 +183,45 @@ textarea {
   background: rgb(20, 20, 20) !important;
 }
 
-@media (min-width: 768px) {
+.coupon_tag {
+  font-weight: 700;
+  padding: 3px 6px;
+  background-color: rgb(255, 150, 29);
+  border-radius: 3px;
+  font-size: 10px;
+  position: relative;
+  right: -10px;
+}
+
+.coupon_title {
+  font-weight: 700;
+  color: rgb(88, 155, 255);
+  font-size: 17px;
+}
+
+.Toastify__toast--success {
+  background: #0966cb !important;
+}
+
+.form-coupon-add {
+  width: 60% !important;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .form-coupon-add {
+    width: 85% !important;
+  }
+}
+
+.form_button_coupon {
+  background-color: rgb(93, 75, 255) !important;
+  border: none !important;
+  padding: 20px 40px !important;
+  width: 100%;
+  font-weight: 700 !important;
+  margin-top: 20px;
+}
+
+.form_button_coupon:hover {
+  background-color: rgb(41, 18, 247) !important;
 }

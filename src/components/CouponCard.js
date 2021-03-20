@@ -7,22 +7,49 @@ const CouponCard = ({ coupon, showBuy, handleBuy }) => {
       <Card.Header>
         <Card.Text>
           <span>
-            {coupon.title}
-            <small style={{ float: "right" }}>
-              {coupon.type.toUpperCase()}
+            <b className="coupon_title">
+              🤯 {coupon.title.substring(0, 20) + "..."}
+            </b>
+            <small className="coupon_tag" style={{ float: "right" }}>
+              💰 {coupon.type.toUpperCase()}
             </small>
           </span>
         </Card.Text>
       </Card.Header>
       <Card.Body>
-        <Card.Title>{coupon.code}</Card.Title>
+        <Card.Title>
+          <b>{coupon.code}</b>
+        </Card.Title>
         <Card.Text>{coupon.description}</Card.Text>
         <Card.Text>
-          Expires On - {new Date(coupon.expiryDate).toDateString()}
+          Expires On{" "}
+          <span
+            className="expiry_date"
+            style={{
+              background: "rgba(32, 32, 31, 0.4)",
+              padding: "5px 10px",
+              marginLeft: "5px",
+              borderRadius: "5px",
+              color: "white !important",
+              textAlign: "center",
+              fontWeight: "700",
+            }}
+          >
+            {new Date(coupon.expiryDate).toDateString()}{" "}
+            <img
+              src="https://media.giphy.com/media/Ctdo2F6D4dZBnXyB7A/giphy.gif"
+              width="30px"
+            />
+          </span>
         </Card.Text>
         <Card.Text>
-          Posted By -{" "}
-          {coupon.postedBy ? coupon.postedBy.name : "User from Asgard"}
+          <small>
+            Posted By
+            <br />
+          </small>{" "}
+          <span className="posted_name">
+            {coupon.postedBy ? coupon.postedBy.name : "User from Asgard ⛈️"}
+          </span>
         </Card.Text>
       </Card.Body>
       {showBuy && (
@@ -33,7 +60,7 @@ const CouponCard = ({ coupon, showBuy, handleBuy }) => {
             className="buy_button"
             onClick={() => handleBuy(coupon._id)}
           >
-            Buy
+            Get it now
           </Button>
         </Card.Footer>
       )}
