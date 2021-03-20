@@ -19,11 +19,8 @@ const FilterForm = ({ listCoupons }) => {
   };
 
   return (
-    <div className="center-content">
-      <legend className="text-center">
-        Filters
-        <hr />
-      </legend>
+    <div className="center-content search-form">
+      <legend>Filters</legend>
 
       <Form className="my-4" onSubmit={handleSubmit}>
         <Form.Group>
@@ -47,7 +44,13 @@ const FilterForm = ({ listCoupons }) => {
             <option value="free">Free</option>
           </Form.Control>
         </Form.Group>
-        <Button type="submit">Apply Filters</Button>
+        <Button
+          type="submit"
+          className="form_button"
+          style={{ paddingRight: "15px" }}
+        >
+          🖖 Apply Filters
+        </Button>
       </Form>
     </div>
   );

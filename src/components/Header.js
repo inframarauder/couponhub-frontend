@@ -18,43 +18,72 @@ const Header = ({ auth, logout }) => {
 
   return auth.isLoggedIn ? (
     <>
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Navbar.Brand href="/">CouponHub</Navbar.Brand>
+      <Navbar collapseOnSelect expand="lg" variant="dark" className="navbar">
+        <Navbar.Brand href="/">
+          <img
+            src="https://media.giphy.com/media/cJY9brU09bZf1StnQC/giphy.gif"
+            width="60px"
+          />
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />{" "}
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-4">
-            <Nav.Link href="/coupons" active>
-              Browse Coupons
+            <Nav.Link href="/coupons" active className="header_link">
+              ⚔️ Explore
             </Nav.Link>
-            <Nav.Link href="/my_coupons" active>
-              My Coupons
+            <Nav.Link href="/my_coupons" active className="header_link">
+              🤠 My Coupons
             </Nav.Link>
-            <Nav.Link href="/post_coupon" active>
-              Post a Coupon
+            <Nav.Link href="/post_coupon" active className="header_link">
+              💜 Add a Coupon
             </Nav.Link>
           </Nav>
           <Nav className="ml-auto mr-4">
             <Dropdown drop="left">
               <Dropdown.Toggle id="dropdown-basic">
-                {<i className="fa fa-user"></i>}
+                {
+                  <img
+                    src="https://media.giphy.com/media/JUHO9F08TV1WoaBH6G/giphy.gif"
+                    width="60px"
+                  />
+                }
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
-                <Dropdown.Item>
-                  Logged in as:
-                  <br />
-                  <strong>{auth.user?.name}</strong>
-                  <br />
-                  <small>({auth.user?.email})</small>
+                <Dropdown.Item className="dropdown_link">
+                  <div class="username_dropdown">
+                    <strong>😃 {auth.user?.name}</strong>
+                    <br />
+                    <small>{auth.user?.email}</small>
+                  </div>
                 </Dropdown.Item>
-                <Dropdown.Item>Cerdits : {auth.user?.credits}</Dropdown.Item>
-                <Button
-                  variant="secondary"
-                  size="sm"
+                <Dropdown.Item className="credits dropdown_link">
+                  Credits :{" "}
+                  <span
+                    style={{
+                      background: "rgba(32, 32, 31, 0.4)",
+                      padding: "5px 10px",
+                      marginLeft: "5px",
+                      borderRadius: "5px",
+                      color: "white !important",
+                      textAlign: "center",
+                      fontWeight: "700",
+                    }}
+                  >
+                    {auth.user?.credits}{" "}
+                    <img
+                      src="https://media.giphy.com/media/QxjapRWD37qqPfI5xy/giphy.gif"
+                      width="30px"
+                    />
+                  </span>
+                </Dropdown.Item>
+                <hr />
+                <Dropdown.Item
+                  className="Logout_button dropdown_link"
                   onClick={() => handleLogout()}
                 >
                   Logout
-                </Button>
+                </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>{" "}
           </Nav>

@@ -21,7 +21,8 @@ const CouponCard = ({ coupon, showBuy, handleBuy }) => {
           Expires On - {new Date(coupon.expiryDate).toDateString()}
         </Card.Text>
         <Card.Text>
-          Posted By - {coupon.postedBy ? coupon.postedBy.name : "Deleted User"}
+          Posted By -{" "}
+          {coupon.postedBy ? coupon.postedBy.name : "User from Asgard"}
         </Card.Text>
       </Card.Body>
       {showBuy && (
@@ -29,6 +30,7 @@ const CouponCard = ({ coupon, showBuy, handleBuy }) => {
           <Button
             variant="success"
             size="lg"
+            className="buy_button"
             onClick={() => handleBuy(coupon._id)}
           >
             Buy

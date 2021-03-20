@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+
+body {
+  font-family: "Nunito", sans-serif !important;
+}
+
+/* Footer */
+
+.bigfoot {
+  background: rgb(19, 19, 19);
+  color: white;
+
+  font-family: "Nunito", sans-serif !important;
+  font-weight: 600;
+  padding: 10px 10px;
+}
+
+/* Navbar */
+
+.navbar {
+  font-family: "Nunito", sans-serif !important;
+  font-weight: 600;
+  padding: 10px 10px;
+  background: rgb(19, 19, 19) !important;
+}
+
+.dropleft .dropdown-toggle::before {
+  display: none !important;
+}
+
+#dropdown-basic {
+  background-color: rgb(73, 73, 73) !important;
+  border: none !important;
+  padding: 3px !important;
+}
+
+#dropdown-basic:focus,
+#dropdown-basic:active {
+  background-color: rgb(100, 100, 100) !important;
+  border: none;
+}
+
+.header_link {
+  transition: all 0.3s ease;
+  padding: 7px 15px !important;
+  background: rgb(39, 39, 39) !important;
+  margin: 5px;
+  border-radius: 4px;
+}
+
+.header_link:hover {
+  background-color: rgb(40, 122, 204) !important;
+}
+
+.my-4 {
+  background: rgb(0, 0, 0);
+}
+
+.buy_button {
+  background-color: #007bff !important;
+  padding: 6px 40px !important;
+  border: none !important;
+}
+
+input {
+  color: white !important;
+  background: rgb(30, 30, 30) !important;
+  padding: 10px 20px !important;
+  border: none !important;
+  height: 45px !important;
+}
+
+select {
+  color: white !important;
+  background: rgb(30, 30, 30) !important;
+  padding: 10px 20px !important;
+  border: none !important;
+  height: 45px !important;
+}
+
+textarea {
+  color: white !important;
+  background: rgb(30, 30, 30) !important;
+  padding: 10px 20px !important;
+  border: none !important;
+}
+
+.dropdown-menu {
+  color: white !important;
+  background: rgb(50, 50, 50) !important;
+}
+
+.username_dropdown {
+  background: rgba(32, 32, 31, 0.4);
+  padding: 5px 20px 15px 20px;
+  border-radius: 5px;
+  color: white !important;
+  text-align: center;
+}
+
+.username_dropdown small {
+  background: rgb(95, 98, 255);
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-bottom: 4px;
+  font-weight: 700 !important;
+}
+
+.credits {
+  color: white !important;
+  text-align: center !important;
+  font-weight: 600 !important;
+}
+
+.Logout_button {
+  text-align: center !important;
+  color: rgb(255, 89, 60) !important;
+  font-weight: 700 !important;
+  padding-bottom: 10px !important;
+  transition: all 0.2s ease;
+}
+
+.dropdown_link:hover {
+  background-color: transparent !important;
+}
+
+.Logout_button:hover {
+  color: rgb(255, 81, 133) !important;
+}
+
+.form_button {
+  background-color: rgb(44, 44, 44) !important;
+  border: none !important;
+}
+.form_button:hover {
+  background-color: rgb(40, 122, 204) !important;
+}
+
+.search-form {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}
