@@ -64,7 +64,6 @@ const Verification = ({ auth }) => {
         >
           🎊 Your email is verified
         </p>
-        <br />
         <a href="/coupons">
           <Button className="submit_button">Back to Coupons 😃</Button>
         </a>
