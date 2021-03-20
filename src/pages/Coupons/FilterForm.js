@@ -44,10 +44,11 @@ const FilterForm = ({ listCoupons }) => {
             <option value="free">Free</option>
           </Form.Control>
         </Form.Group>
+        <hr />
         <Button
           type="submit"
           className="form_button"
-          style={{ paddingRight: "15px" }}
+          style={{ padding: "15px", width: "100%" }}
         >
           🖖 Apply Filters
         </Button>

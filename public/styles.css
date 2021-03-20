@@ -102,7 +102,7 @@ textarea {
   background: rgb(95, 98, 255);
   padding: 3px 8px;
   border-radius: 4px;
-  margin-bottom: 4px;
+  margin-top: 8px;
   font-weight: 700 !important;
 }
 
@@ -139,7 +139,7 @@ textarea {
 
 .search-form {
   background-color: rgb(10, 10, 10) !important;
-  padding: 10px 20px;
+  padding: 10px 20px 1px 20px;
   border-radius: 4px;
   margin-bottom: 50px;
 }
@@ -174,5 +174,9 @@ textarea {
 }
 
 .card {
+  border-top: 4px solid rgb(117, 101, 255) !important;
   background: rgb(20, 20, 20) !important;
+}
+
+@media (min-width: 768px) {
 }

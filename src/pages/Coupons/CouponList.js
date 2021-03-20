@@ -47,11 +47,13 @@ const CouponList = ({ coupons, listCoupons }) => {
       <legend className="text-center search-results">
         🦄😇 {coupons.couponList.length} coupon(s) found...
       </legend>
-      {coupons.couponList.map((coupon) => (
-        <div key={coupon._id}>
-          <CouponCard coupon={coupon} showBuy={true} handleBuy={handleBuy} />
-        </div>
-      ))}
+      <div className="row">
+        {coupons.couponList.map((coupon) => (
+          <div key={coupon._id} className="col-lg-6">
+            <CouponCard coupon={coupon} showBuy={true} handleBuy={handleBuy} />
+          </div>
+        ))}
+      </div>
     </>
   );
 };
