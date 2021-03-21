@@ -82,7 +82,12 @@ const brands = [
 const TopBrands = () => {
   return (
     <Container>
-      <h4 className="text-center display-4">Our Top Brands</h4>
+      <h4 className="text-center display-4">
+        🍂{" "}
+        <b style={{ color: "rgb(255, 208, 121)", fontWeight: "700" }}>
+          top brands
+        </b>{" "}
+      </h4>
       <h6 className="text-center">
         <small>
           Not really, we just hope that they become our top brands 😔
