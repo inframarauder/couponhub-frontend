@@ -8,7 +8,10 @@ const NotFound = () => {
       className="center-content h-100 page-404"
       style={{ background: "black" }}
     >
-      <img src="https://media.giphy.com/media/QW5Q1htLKUtBQxJ1C6/giphy.gif" />
+      <img
+        src="https://media.giphy.com/media/QW5Q1htLKUtBQxJ1C6/giphy.gif"
+        alt="not-found-gif"
+      />
       <p
         style={{
           fontSize: "25px",

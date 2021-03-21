@@ -21,6 +21,7 @@ const CouponList = ({ coupons, listCoupons }) => {
         <img
           src="https://media.giphy.com/media/w6YCfXHS6QZjeHlVpI/giphy.gif"
           width="30px"
+          alt="coupon-purchased-gif"
         />
       </p>
     </div>

@@ -23,6 +23,7 @@ const Header = ({ auth, logout }) => {
           <img
             src="https://media.giphy.com/media/cJY9brU09bZf1StnQC/giphy.gif"
             width="60px"
+            alt="nav-brand-gif"
           />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />{" "}
@@ -45,6 +46,7 @@ const Header = ({ auth, logout }) => {
                   <img
                     src="https://media.giphy.com/media/JUHO9F08TV1WoaBH6G/giphy.gif"
                     width="60px"
+                    alt="dropdown-toggle-gif"
                   />
                 }
               </Dropdown.Toggle>
@@ -74,6 +76,7 @@ const Header = ({ auth, logout }) => {
                     <img
                       src="https://media.giphy.com/media/QxjapRWD37qqPfI5xy/giphy.gif"
                       width="30px"
+                      alt="credits-gif"
                     />
                   </span>
                 </Dropdown.Item>
@@ -108,6 +111,7 @@ const Header = ({ auth, logout }) => {
                   src="https://media.giphy.com/media/Z9hdaqcDgk79nRmZze/giphy.gif"
                   width="100px"
                   style={{ float: "right" }}
+                  alt="verify-gif"
                 />
               </div>
             </div>

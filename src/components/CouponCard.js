@@ -46,6 +46,7 @@ const CouponCard = ({ coupon, showBuy, handleBuy }) => {
             <img
               src="https://media.giphy.com/media/Ctdo2F6D4dZBnXyB7A/giphy.gif"
               width="30px"
+              alt="expiry-gif"
             />
           </span>
         </Card.Text>

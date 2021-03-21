@@ -57,6 +57,7 @@ const Verification = ({ auth }) => {
           src="https://media.giphy.com/media/6nZYNpm9icrCm7eAoF/giphy.gif"
           width="150px"
           style={{ float: "right" }}
+          alt="verification-form-gif"
         />
         <p
           className="text-center display-4"
