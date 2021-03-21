@@ -207,6 +207,10 @@ textarea {
   width: 60% !important;
 }
 
+.form-coupon-add-signup {
+  width: 50% !important;
+}
+
 .form_button_coupon {
   background-color: rgb(93, 75, 255) !important;
   border: none !important;
@@ -244,6 +248,10 @@ textarea {
     width: 85% !important;
   }
 
+  .form-coupon-add-signup {
+    width: 85% !important;
+  }
+
   .alert-box {
     width: 90% !important;
   }
@@ -260,4 +268,17 @@ textarea {
 
 .resend_button {
   background-color: rgb(255, 167, 66) !important;
+}
+
+.Productbadges {
+  background: rgb(20, 20, 20) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.Productbadges:hover {
+  background: rgb(59, 95, 255) !important;
+  color: rgb(255, 255, 255) !important;
 }

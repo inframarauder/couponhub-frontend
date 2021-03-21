@@ -25,15 +25,15 @@ const Login = ({ auth, login }) => {
   ) : auth.isLoggedIn ? (
     <Redirect to="/coupons" />
   ) : (
-    <Container className="h-100">
-      <Jumbotron className="my-4">
+    <Container className="h-100 form-coupon-add-signup">
+      <Jumbotron className="my-4" style={{ background: "black" }}>
         <legend className="text-center">
-          Login to CouponHub
+          🍍 Login to CouponHub
           <hr />
         </legend>
         <Form onSubmit={handleSubmit}>
           <Form.Group>
-            <Form.Label>Email address</Form.Label>
+            <Form.Label>🍩 Email address</Form.Label>
             <Form.Control
               type="email"
               placeholder="Enter email"
@@ -45,7 +45,7 @@ const Login = ({ auth, login }) => {
           </Form.Group>
 
           <Form.Group>
-            <Form.Label>Password</Form.Label>
+            <Form.Label>🍘 Password</Form.Label>
             <Form.Control
               type="password"
               placeholder="Password"
@@ -55,8 +55,8 @@ const Login = ({ auth, login }) => {
               required
             />
           </Form.Group>
-          <Button variant="primary" type="submit">
-            Submit
+          <Button className="form_button_coupon" type="submit">
+            Log in 🍜
           </Button>
         </Form>
       </Jumbotron>

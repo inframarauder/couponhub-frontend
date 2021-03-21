@@ -3,8 +3,13 @@ import { Badge } from "react-bootstrap";
 
 const BrandBadge = ({ brand }) => {
   return (
-    <Badge variant="primary" style={{ padding: "10px" }}>
-      <span style={{ fontSize: "1.5rem", padding: "10px" }}>{brand}</span>
+    <Badge
+      className="Productbadges"
+      style={{ padding: "10px" }}
+      href="/coupons"
+    >
+      <img src={brand.image} alt="thumbnail" height="150px" />
+      <span style={{ fontSize: "1.5rem", padding: "10px" }}>{brand.title}</span>
     </Badge>
   );
 };

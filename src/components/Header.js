@@ -120,8 +120,16 @@ const Header = ({ auth, logout }) => {
       )}
     </>
   ) : (
-    <Navbar bg="dark" variant="dark">
-      <Navbar.Brand href="/">CouponHub</Navbar.Brand>
+    <Navbar variant="dark">
+      <Navbar.Brand href="/">
+        {" "}
+        <img
+          src="https://media.giphy.com/media/cJY9brU09bZf1StnQC/giphy.gif"
+          width="60px"
+          alt="nav-brand-gif"
+        />{" "}
+        &nbsp;/ &nbsp;get started 💩
+      </Navbar.Brand>
     </Navbar>
   );
 };

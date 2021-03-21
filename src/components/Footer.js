@@ -10,7 +10,7 @@ const Footer = () => {
         </span>
         <br />
         <span className="foot_float_left">
-          Not a{" "}
+          Not a &nbsp;
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Y_Combinator_logo.svg/1200px-Y_Combinator_logo.svg.png"
             width="20px"
