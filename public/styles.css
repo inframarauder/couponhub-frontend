@@ -242,6 +242,10 @@ textarea {
   border: none !important;
   margin-top: 10px !important;
 }
+.hero-image {
+  width: 90% !important;
+  float: right !important;
+}
 
 @media (min-width: 320px) and (max-width: 480px) {
   .form-coupon-add {
@@ -254,6 +258,17 @@ textarea {
 
   .alert-box {
     width: 90% !important;
+  }
+
+  .hero-image {
+    width: 100% !important;
+  }
+
+  .page-content {
+    text-align: center !important;
+  }
+  .page-title {
+    font-size: 3.5rem !important;
   }
 }
 

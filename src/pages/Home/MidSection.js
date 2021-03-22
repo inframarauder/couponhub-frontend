@@ -7,19 +7,13 @@ const MidSection = ({ auth }) => {
     <Jumbotron fluid style={{ background: "rgb(20,20,20)" }}>
       <Container>
         <div className="row">
-          <div classname="col-lg-6 col-md-6">
-            <img
-              src="https://media.giphy.com/media/J147q8Ip0EmLQFJOPZ/giphy.gif"
-              width="90%"
-              style={{ borderRadius: "10px", float: "left" }}
-              alt="coupon"
-            />
-          </div>
-
-          <div classname="col-lg-6 col-md-6">
+          <div className="col-lg-6 col-md-6 page-content">
             <p className="display-3">
               {" "}
-              <b style={{ color: "rgb(127, 112, 255)", fontWeight: "700" }}>
+              <b
+                className="page-title"
+                style={{ color: "rgb(127, 112, 255)", fontWeight: "700" }}
+              >
                 CouponHub
               </b>{" "}
             </p>
@@ -52,8 +46,19 @@ const MidSection = ({ auth }) => {
                     Log in 😋
                   </Button>
                 </p>
+                <br />
               </>
             )}
+          </div>
+
+          <div className="col-lg-6 col-md-6">
+            <img
+              className="hero-image"
+              src="https://media.giphy.com/media/J147q8Ip0EmLQFJOPZ/giphy.gif"
+              width="80%"
+              style={{ borderRadius: "10px" }}
+              alt="coupon"
+            />
           </div>
         </div>
       </Container>
