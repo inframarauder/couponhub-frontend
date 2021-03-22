@@ -15,6 +15,7 @@ export const signup = (body) => async (dispatch) => {
     const { data } = await api.signup(body);
     localStorage.setItem("token", data.token);
     dispatch({ type: AUTH_SUCCESS });
+    dispatch(fetchUserProfile("me"));
   } catch (error) {
     errorHandler(error, AUTH_FAILURE, dispatch);
   }
