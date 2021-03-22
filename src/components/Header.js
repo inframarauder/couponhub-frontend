@@ -101,13 +101,13 @@ const Header = ({ auth, logout }) => {
                 <br />
                 <Button
                   variant="primary"
-                  style={{ position: "relative", top: "10px" }}
+                  className="move-down"
                   onClick={() => (window.location.href = "/verification")}
                 >
                   Verify Now 😔
                 </Button>
               </div>
-              <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+              <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4 hide-in-small">
                 <img
                   src="https://media.giphy.com/media/Z9hdaqcDgk79nRmZze/giphy.gif"
                   width="100px"
@@ -121,7 +121,7 @@ const Header = ({ auth, logout }) => {
       )}
     </>
   ) : (
-    <Navbar variant="dark">
+    <Navbar variant="dark" className="unauth-nav">
       <Navbar.Brand href="/">
         {" "}
         <img

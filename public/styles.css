@@ -2,6 +2,7 @@
 
 body {
   font-family: "Nunito", sans-serif !important;
+  transition: all 0.2s ease !important;
 }
 
 /* Footer */
@@ -13,6 +14,7 @@ body {
   font-family: "Nunito", sans-serif !important;
   font-weight: 600;
   padding: 10px 10px;
+  transition: all 0.2s ease !important;
 }
 
 /* Navbar */
@@ -22,6 +24,7 @@ body {
   font-weight: 600;
   padding: 10px 10px;
   background: rgb(19, 19, 19) !important;
+  transition: all 0.2s ease !important;
 }
 
 .dropleft .dropdown-toggle::before {
@@ -32,12 +35,14 @@ body {
   background-color: rgb(73, 73, 73) !important;
   border: none !important;
   padding: 0px !important;
+  transition: all 0.2s ease !important;
 }
 
 #dropdown-basic:focus,
 #dropdown-basic:active {
   background-color: rgb(100, 100, 100) !important;
   border: none;
+  transition: all 0.2s ease !important;
 }
 
 .header_link {
@@ -46,6 +51,7 @@ body {
   background: rgb(39, 39, 39) !important;
   margin: 5px;
   border-radius: 4px;
+  transition: all 0.2s ease !important;
 }
 
 .header_link:hover {
@@ -54,6 +60,7 @@ body {
 
 .my-4 {
   background: rgb(0, 0, 0);
+  transition: all 0.2s ease !important;
 }
 
 .buy_button {
@@ -61,6 +68,7 @@ body {
   padding: 10px 20px !important;
   border: none !important;
   width: 100%;
+  transition: all 0.2s ease !important;
 }
 
 .buy_button:hover {
@@ -73,6 +81,7 @@ input {
   padding: 10px 20px !important;
   border: none !important;
   height: 45px !important;
+  transition: all 0.2s ease !important;
 }
 
 select {
@@ -81,6 +90,7 @@ select {
   padding: 10px 20px !important;
   border: none !important;
   height: 45px !important;
+  transition: all 0.2s ease !important;
 }
 
 textarea {
@@ -88,11 +98,13 @@ textarea {
   background: rgb(30, 30, 30) !important;
   padding: 10px 20px !important;
   border: none !important;
+  transition: all 0.2s ease !important;
 }
 
 .dropdown-menu {
   color: white !important;
   background: rgb(50, 50, 50) !important;
+  transition: all 0.2s ease !important;
 }
 
 .username_dropdown {
@@ -101,6 +113,7 @@ textarea {
   border-radius: 5px;
   color: white !important;
   text-align: center;
+  transition: all 0.2s ease !important;
 }
 
 .username_dropdown small {
@@ -109,12 +122,14 @@ textarea {
   border-radius: 4px;
   margin-top: 8px;
   font-weight: 700 !important;
+  transition: all 0.2s ease !important;
 }
 
 .credits {
   color: white !important;
   text-align: center !important;
   font-weight: 600 !important;
+  transition: all 0.2s ease !important;
 }
 
 .Logout_button {
@@ -123,20 +138,23 @@ textarea {
   font-weight: 700 !important;
   padding-bottom: 10px !important;
   transition: all 0.2s ease;
+  transition: all 0.2s ease !important;
 }
 
 .dropdown_link:hover {
   background-color: transparent !important;
+  transition: all 0.2s ease !important;
 }
 
 .Logout_button:hover {
-  color: rgb(255, 81, 133) !important;
+  color: rgb(255, 255, 255) !important;
 }
 
 .form_button {
   background-color: rgb(44, 44, 44) !important;
   border: none !important;
   padding: 10px 20px !important;
+  transition: all 0.2s ease !important;
 }
 .form_button:hover {
   background-color: rgb(40, 122, 204) !important;
@@ -147,6 +165,7 @@ textarea {
   padding: 10px 20px 1px 20px;
   border-radius: 4px;
   margin-bottom: 50px;
+  transition: all 0.2s ease !important;
 }
 
 .search-form-inside {
@@ -160,11 +179,13 @@ textarea {
   margin: 2px;
   border-radius: 3px;
   background-color: grey;
+  transition: all 0.2s ease !important;
 }
 
 .searchBoxText {
   color: rgb(255, 208, 121);
   font-weight: 700;
+  transition: all 0.2s ease !important;
 }
 
 .search-results {
@@ -176,11 +197,13 @@ textarea {
   background: rgb(20, 20, 20) !important;
   width: 250px !important;
   margin: 1px auto !important;
+  transition: all 0.2s ease !important;
 }
 
 .card {
   border-top: 4px solid rgb(117, 101, 255) !important;
   background: rgb(20, 20, 20) !important;
+  transition: all 0.2s ease !important;
 }
 
 .coupon_tag {
@@ -191,6 +214,7 @@ textarea {
   font-size: 10px;
   position: relative;
   right: -10px;
+  transition: all 0.2s ease !important;
 }
 
 .coupon_title {
@@ -201,10 +225,12 @@ textarea {
 
 .Toastify__toast--success {
   background: #0966cb !important;
+  transition: all 0.2s ease !important;
 }
 
 .form-coupon-add {
   width: 60% !important;
+  transition: all 0.2s ease !important;
 }
 
 .form-coupon-add-signup {
@@ -218,6 +244,7 @@ textarea {
   width: 100%;
   font-weight: 700 !important;
   margin-top: 20px;
+  transition: all 0.2s ease !important;
 }
 
 .form_button_coupon:hover {
@@ -233,6 +260,7 @@ textarea {
   padding: 10px 20px !important;
   margin: 20px auto !important;
   border-radius: 4px !important;
+  transition: all 0.2s ease !important;
 
   /* display: flow-root!important; */
 }
@@ -241,10 +269,23 @@ textarea {
   background-color: rgb(60, 45, 190) !important;
   border: none !important;
   margin-top: 10px !important;
+  transition: all 0.2s ease !important;
 }
 .hero-image {
   width: 90% !important;
   float: right !important;
+  transition: all 0.2s ease !important;
+}
+
+.unauth-nav {
+  justify-content: center !important;
+  transition: all 0.2s ease !important;
+}
+
+.move-down {
+  position: relative;
+  top: 20px;
+  transition: all 0.2s ease !important;
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
@@ -270,6 +311,14 @@ textarea {
   .page-title {
     font-size: 3.5rem !important;
   }
+
+  .hide-in-small {
+    display: none;
+  }
+
+  .move-down {
+    top: 4px;
+  }
 }
 
 .submit_button,
@@ -279,6 +328,7 @@ textarea {
   padding: 10px 25px !important;
   margin: 10px !important;
   font-weight: 700 !important;
+  transition: all 0.2s ease !important;
 }
 
 .resend_button {
@@ -291,6 +341,7 @@ textarea {
   flex-direction: column !important;
   align-items: center !important;
   justify-content: center !important;
+  transition: all 0.2s ease !important;
 }
 
 .Productbadges:hover {

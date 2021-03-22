@@ -38,8 +38,6 @@ const MyCoupons = ({ auth }) => {
         className="text-center my-4"
         style={{
           color: "rgb(255, 208, 121)",
-          position: "relative",
-          left: "50px",
         }}
       >
         🥑 <b>Your coupons</b>

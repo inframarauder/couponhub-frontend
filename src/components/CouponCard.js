@@ -7,19 +7,44 @@ const CouponCard = ({ coupon, showBuy, handleBuy }) => {
       <Card.Header>
         <Card.Text>
           <span>
-            <b className="coupon_title">
-              🤯 {coupon.title.substring(0, 20) + "..."}
-            </b>
-            <small className="coupon_tag" style={{ float: "right" }}>
-              💰 {coupon.type.toUpperCase()}
-            </small>
+            <div className="row">
+              <div className="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                <b className="coupon_title">
+                  {coupon.title.substring(0, 70) + "..."}
+                </b>
+              </div>
+              <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                <small className="coupon_tag" style={{ float: "right" }}>
+                  {coupon.type.toUpperCase()}
+                </small>
+              </div>
+            </div>
           </span>
         </Card.Text>
       </Card.Header>
       <Card.Body>
-        <Card.Title>
+        <span
+          className="expiry_date"
+          style={{
+            background: "#ff4b7f",
+            padding: "3px 8px",
+            margin: "5px 0px",
+            borderRadius: "5px",
+            color: "white !important",
+            textAlign: "center",
+            whiteSpace: "nowrap",
+            fontWeight: "700",
+            position: "relative",
+            top: "-8px",
+            fontSize: "13px",
+          }}
+        >
+          @ {coupon.redeemPlatform}
+        </span>
+        <Card.Title style={{ marginTop: "5px" }}>
           <b>{coupon.code}</b>
         </Card.Title>
+
         <Card.Text
           style={{
             minHeight: "80px",
