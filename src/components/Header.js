@@ -101,6 +101,7 @@ const Header = ({ auth, logout }) => {
                 <br />
                 <Button
                   variant="primary"
+                  style={{ position: "relative", top: "10px" }}
                   onClick={() => (window.location.href = "/verification")}
                 >
                   Verify Now 😔
