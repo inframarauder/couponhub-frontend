@@ -290,11 +290,11 @@ textarea {
 
 @media (min-width: 320px) and (max-width: 480px) {
   .form-coupon-add {
-    width: 96% !important;
+    width: 100% !important;
   }
 
   .form-coupon-add-signup {
-    width: 96% !important;
+    width: 100% !important;
   }
 
   .alert-box {
