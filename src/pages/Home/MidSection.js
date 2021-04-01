@@ -19,7 +19,7 @@ const MidSection = ({ auth }) => {
               <span
                 className="HeadLiner"
                 style={{
-                  color: "#8170ff",
+                  color: "#59a1ff",
                   fontFamily: "'Dela Gothic One', cursive",
                   transform: "translate3d(-10px, -10px, 0px)",
                   textShadow:
