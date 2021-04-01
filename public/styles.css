@@ -332,6 +332,10 @@ textarea {
   .HeadLiner {
     font-size: 50px;
   }
+
+  .foot_float_left {
+    text-align: center !important;
+  }
 }
 
 .submit_button,
