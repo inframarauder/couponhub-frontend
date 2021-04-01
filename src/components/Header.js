@@ -85,7 +85,7 @@ const Header = ({ auth, logout }) => {
                   className="Logout_button dropdown_link"
                   onClick={() => handleLogout()}
                 >
-                  Logout &nbsp;&nbsp;<i class="fas fa-radiation"></i>
+                  Logout &nbsp;&nbsp;<i class="fas fa-sign-out-alt"></i>
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>{" "}
@@ -97,7 +97,7 @@ const Header = ({ auth, logout }) => {
           <Alert variant="warning" className="center-content alert-box">
             <div className="row">
               <div className="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                Please verify your email to sell or buy coupons.
+                Verify your email to sell or buy coupons.
                 <br />
                 <Button
                   variant="primary"

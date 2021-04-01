@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap");
 
 body {
   font-family: "Nunito", sans-serif !important;
@@ -6,6 +7,14 @@ body {
 }
 
 /* Footer */
+
+a {
+  transition: all 0.2s ease !important;
+}
+a:hover {
+  color: rgb(255, 255, 255) !important;
+  text-decoration: none !important;
+}
 
 .bigfoot {
   background: rgb(19, 19, 19);
@@ -318,6 +327,10 @@ textarea {
 
   .move-down {
     top: 4px;
+  }
+
+  .HeadLiner {
+    font-size: 20px;
   }
 }
 

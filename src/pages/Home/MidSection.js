@@ -4,21 +4,33 @@ import { connect } from "react-redux";
 
 const MidSection = ({ auth }) => {
   return (
-    <Jumbotron fluid style={{ background: "rgb(20,20,20)" }}>
+    <Jumbotron fluid style={{ background: "rgb(0,0,0)" }}>
       <Container>
         <div className="row">
           <div className="col-lg-6 col-md-6 page-content">
             <p className="display-3">
               {" "}
-              <b
+              {/* <b
                 className="page-title"
                 style={{ color: "rgb(127, 112, 255)", fontWeight: "700" }}
               >
                 CouponHub
-              </b>{" "}
+              </b>{" "} */}
+              <span
+                className="HeadLiner"
+                style={{
+                  color: "#4C37EB",
+                  fontFamily: "'Dela Gothic One', cursive",
+                  transform: "translate3d(-10px, -10px, 0px)",
+                  textShadow:
+                    "1px 1px #F90566, 2px 2px #F90566, 3px 3px #F90566, 4px 4px #F90566, 5px 5px #F90566, 6px 6px #F90566, 7px 7px #F90566, 8px 8px #F90566, 9px 9px #F90566, 10px 10px #F90566",
+                }}
+              >
+                CouponHub
+              </span>
             </p>
-            <p style={{ color: "white", fontWeight: "700" }}>
-              👊 Et tu coupon? then just swap . . .
+            <p style={{ color: "white", fontWeight: "700", fontSize: "20px" }}>
+              &nbsp;&nbsp;🎫 Et tu (have a) coupon? then just swap . . .
             </p>
             {!auth.isLoggedIn && (
               <>
@@ -44,6 +56,41 @@ const MidSection = ({ auth }) => {
                     onClick={() => (window.location.href = "/login")}
                   >
                     Log in 😋
+                  </Button>
+                </p>
+                <br />
+              </>
+            )}
+
+            {auth.isLoggedIn && (
+              <>
+                <p>
+                  <br />
+                  <Button
+                    className="sign_up_button"
+                    style={{
+                      marginRight: "10px",
+                      fontWeight: "700",
+                      background: "rgb(39, 39, 39) ",
+                      border: "none",
+                    }}
+                    size="lg"
+                    onClick={() => (window.location.href = "/coupons")}
+                  >
+                    ⚔️ Explore
+                  </Button>
+                  <Button
+                    className="sign_up_button"
+                    style={{
+                      marginRight: "10px",
+                      fontWeight: "700",
+                      background: "rgb(39, 39, 39) ",
+                      border: "none",
+                    }}
+                    size="lg"
+                    onClick={() => (window.location.href = "/post_coupon")}
+                  >
+                    💜 Add a Coupon
                   </Button>
                 </p>
                 <br />

@@ -83,10 +83,17 @@ const TopBrands = () => {
   return (
     <Container>
       <h4 className="text-center display-4">
-        🍂{" "}
-        <b style={{ color: "rgb(255, 208, 121)", fontWeight: "700" }}>
+        <b
+          style={{
+            color: "rgb(255, 208, 121)",
+            fontFamily: "'Dela Gothic One', cursive",
+            transform: "translate3d(-10px, -10px, 0px)",
+            textShadow:
+              "1px 1px #F90566, 2px 2px #F90566, 3px 3px #F90566, 4px 4px #F90566, 5px 5px #F90566, 6px 6px #F90566, 7px 7px #F90566, 8px 8px #F90566, 9px 9px #F90566, 10px 10px #F90566",
+          }}
+        >
           top brands
-        </b>{" "}
+        </b>
       </h4>
       <h6 className="text-center">
         <small>

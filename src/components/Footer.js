@@ -6,7 +6,14 @@ const Footer = () => {
       <br />
       <div className="center-content">
         <span className="foot_float_left">
-          Made with ❤️ by <b>CouponHub</b>
+          Made with ❤️ by{" "}
+          <a href="https://twitter.com/shuvam360" target="blank">
+            <b>@shuvam360</b>
+          </a>{" "}
+          &#38;{" "}
+          <a href="https://twitter.com/geram_er_chhele" target="blank">
+            <b>@geram_er_chhele</b>
+          </a>{" "}
         </span>
         <br />
         <span className="foot_float_left">
@@ -16,7 +23,8 @@ const Footer = () => {
             width="20px"
             alt="Y Combinator Logo"
           />{" "}
-          <span style={{ color: "#f16117" }}>Combinator</span> company
+          <span style={{ color: "rgb(255, 170, 100)" }}>Combinator</span>{" "}
+          company
         </span>
         <br />
       </div>
