@@ -29,8 +29,17 @@ const Signup = ({ auth, signup }) => {
     <Container className="h-100 form-coupon-add-signup">
       <Jumbotron className="my-4" style={{ background: "black" }}>
         <legend className="text-center">
-          🍎{" "}
-          <b style={{ color: "rgb(255, 208, 121)" }}>Sign up for CouponHub</b>{" "}
+          <b
+            style={{
+              color: "rgb(255, 208, 121)",
+              fontFamily: "'Dela Gothic One', cursive",
+              transform: "translate3d(-10px, -10px, 0px)",
+              textShadow:
+                "1px 1px #F90566, 2px 2px #F90566, 3px 3px #F90566, 4px 4px #F90566, 5px 5px #F90566, 6px 6px #F90566, 7px 7px #F90566, 8px 8px #F90566, 9px 9px #F90566, 10px 10px #F90566",
+            }}
+          >
+            Sign up @SubSwap
+          </b>
           <hr />
         </legend>
         <Form onSubmit={handleSubmit}>
