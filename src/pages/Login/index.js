@@ -28,17 +28,17 @@ const Login = ({ auth, login }) => {
     <Container className="h-100 form-coupon-add-signup">
       <Jumbotron className="my-4" style={{ background: "black" }}>
         <legend className="text-center">
-          <b
+          <h3
             style={{
-              color: "rgb(255, 208, 121)",
+              color: "#6065FF",
               fontFamily: "'Dela Gothic One', cursive",
               transform: "translate3d(-10px, -10px, 0px)",
               textShadow:
-                "1px 1px #F90566, 2px 2px #F90566, 3px 3px #F90566, 4px 4px #F90566, 5px 5px #F90566, 6px 6px #F90566, 7px 7px #F90566, 8px 8px #F90566, 9px 9px #F90566, 10px 10px #F90566",
+                "1px 1px #00E7FF, 2px 2px #00E7FF, 3px 3px #00E7FF, 4px 4px #00E7FF, 5px 5px #00E7FF, 6px 6px #00E7FF, 7px 7px #00E7FF, 8px 8px #00E7FF, 9px 9px #00E7FF, 10px 10px #00E7FF",
             }}
           >
-            Login
-          </b>
+            Login to SubSwap
+          </h3>
           <hr />
         </legend>
         <Form onSubmit={handleSubmit}>
