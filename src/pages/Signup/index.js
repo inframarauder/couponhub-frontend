@@ -31,14 +31,11 @@ const Signup = ({ auth, signup }) => {
         <legend className="text-center">
           <h3
             style={{
-              color: "#6065FF",
-              fontFamily: "'Dela Gothic One', cursive",
-              transform: "translate3d(-10px, -10px, 0px)",
-              textShadow:
-                "1px 1px #00E7FF, 2px 2px #00E7FF, 3px 3px #00E7FF, 4px 4px #00E7FF, 5px 5px #00E7FF, 6px 6px #00E7FF, 7px 7px #00E7FF, 8px 8px #00E7FF, 9px 9px #00E7FF, 10px 10px #00E7FF",
+              color: "#ffea80",
+              fontWeight: "700",
             }}
           >
-            Sign up to SubSwap
+            🐌 Sign up to SubSwap
           </h3>
           <hr />
         </legend>
