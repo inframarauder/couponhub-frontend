@@ -1,3 +1,3 @@
 #couponhub-frontend
 
-**Frontend code for CouponHub. Buil using React,React Boostrap and Redux**.
+**Frontend code for CouponHub. Built using React,React Boostrap and Redux**.
