@@ -30,7 +30,8 @@ const MidSection = ({ auth }) => {
               </span>
             </p>
             <p style={{ color: "white", fontWeight: "700", fontSize: "20px" }}>
-              &nbsp;&nbsp;🎫 Et tu (have a) coupon? then just swap . . .
+              What do you do with extra coupons that you would not need? What if you could swap them with something that you would use?<br/>
+Sounds cool? You are at the right place ;)
             </p>
             {!auth.isLoggedIn && (
               <>
