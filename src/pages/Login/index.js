@@ -30,7 +30,7 @@ const Login = ({ auth, login }) => {
         <legend className="text-center">
           <h3
             style={{
-              color: "#ffea80",
+              color: "#ffffff",
               fontWeight: "700",
             }}
           >
