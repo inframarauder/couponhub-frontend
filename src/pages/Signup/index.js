@@ -31,7 +31,7 @@ const Signup = ({ auth, signup }) => {
         <legend className="text-center">
           <h3
             style={{
-              color: "#ffea80",
+              color: "#ffffff",
               fontWeight: "700",
             }}
           >
