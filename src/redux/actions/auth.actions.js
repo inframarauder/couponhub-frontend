@@ -9,6 +9,7 @@ import {
 import api from "../../utils/api";
 import errorHandler from "../../utils/errorHandler";
 import jwt from "jsonwebtoken";
+import { toast } from "react-toastify";
 
 export const plainAuth = (type, body) => async (dispatch) => {
   dispatch({ type: SET_LOADING });
@@ -22,6 +23,23 @@ export const plainAuth = (type, body) => async (dispatch) => {
       accessToken,
       process.env.REACT_APP_ACCESS_TOKEN_SECRET
     );
+    dispatch({ type: AUTH_SUCCESS, payload: user });
+  } catch (error) {
+    errorHandler(error, AUTH_FAILURE, dispatch);
+  }
+};
+
+export const verifyEmail = (body) => async (dispatch) => {
+  console.log("here");
+  dispatch({ type: SET_LOADING });
+  try {
+    const { data } = await api.verifyEmail(body);
+    localStorage.setItem("accessToken", data.accessToken); //reset jwt with updated token
+    const { user } = jwt.verify(
+      data.accessToken,
+      process.env.REACT_APP_ACCESS_TOKEN_SECRET
+    );
+    toast.success(data.message);
     dispatch({ type: AUTH_SUCCESS, payload: user });
   } catch (error) {
     errorHandler(error, AUTH_FAILURE, dispatch);
