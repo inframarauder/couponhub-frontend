@@ -21,7 +21,7 @@ function reducer(state = initialState, action) {
     case AUTH_FAILURE:
       return { ...state, loading: false };
     case AUTH_SUCCESS:
-      return { ...state, loading: false, isLoggedIn: true };
+      return { ...state, loading: false, isLoggedIn: true, user: payload };
     case LOGOUT:
       return { ...state, user: null, isLoggedIn: false };
     case USER_FETCH_SUCCESS:

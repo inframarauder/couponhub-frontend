@@ -8,26 +8,21 @@ import {
 } from "../actionTypes";
 import api from "../../utils/api";
 import errorHandler from "../../utils/errorHandler";
+import jwt from "jsonwebtoken";
 
-export const signup = (body) => async (dispatch) => {
+export const plainAuth = (type, body) => async (dispatch) => {
   dispatch({ type: SET_LOADING });
   try {
-    const { data } = await api.signup(body);
-    localStorage.setItem("token", data.token);
-    dispatch({ type: AUTH_SUCCESS });
-    dispatch(fetchUserProfile("me"));
-  } catch (error) {
-    errorHandler(error, AUTH_FAILURE, dispatch);
-  }
-};
-
-export const login = (body) => async (dispatch) => {
-  dispatch({ type: SET_LOADING });
-  try {
-    const { data } = await api.login(body);
-    localStorage.setItem("token", data.token);
-    dispatch({ type: AUTH_SUCCESS });
-    dispatch(fetchUserProfile("me"));
+    const { data } =
+      type === "signup" ? await api.signup(body) : await api.login(body);
+    const { accessToken, refreshToken } = data;
+    localStorage.setItem("accessToken", accessToken);
+    localStorage.setItem("refreshToken", refreshToken);
+    const { user } = jwt.verify(
+      accessToken,
+      process.env.REACT_APP_ACCESS_TOKEN_SECRET
+    );
+    dispatch({ type: AUTH_SUCCESS, payload: user });
   } catch (error) {
     errorHandler(error, AUTH_FAILURE, dispatch);
   }
