@@ -53,6 +53,7 @@ const apiCalls = {
   verifyEmail: (body) => api.put(`/users/verify_email`, body),
   getUserProfile: () => api.get(`/users/profile`),
   deleteUser: () => api.delete(`/users/delete`),
+  logout: (refreshToken) => api.delete("/users/logout", { refreshToken }),
 
   //coupon apis
 

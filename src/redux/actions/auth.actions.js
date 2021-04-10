@@ -39,14 +39,24 @@ export const fetchUserProfile = (userId) => async (dispatch) => {
 };
 
 export const checkAuth = () => (dispatch) => {
-  const token = localStorage.getItem("token");
-  if (token) {
-    dispatch({ type: AUTH_SUCCESS });
-    dispatch(fetchUserProfile("me"));
+  const accessToken = localStorage.getItem("accessToken");
+  if (accessToken) {
+    const { user } = jwt.verify(
+      accessToken,
+      process.env.REACT_APP_ACCESS_TOKEN_SECRET
+    );
+    dispatch({ type: AUTH_SUCCESS, payload: user });
   }
 };
 
-export const logout = () => (dispatch) => {
-  localStorage.clear();
-  dispatch({ type: LOGOUT });
+export const logout = () => async (dispatch) => {
+  const refreshToken = localStorage.getItem("refreshToken");
+  try {
+    await api.logout(refreshToken);
+  } catch (error) {
+    console.error(error);
+  } finally {
+    localStorage.clear();
+    dispatch({ type: LOGOUT });
+  }
 };
