@@ -55,8 +55,7 @@ export const logout = () => async (dispatch) => {
     await api.logout(refreshToken);
   } catch (error) {
     console.error(error);
-  } finally {
-    localStorage.clear();
-    dispatch({ type: LOGOUT });
   }
+  localStorage.clear();
+  dispatch({ type: LOGOUT });
 };
