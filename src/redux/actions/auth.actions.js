@@ -48,6 +48,7 @@ export const checkAuth = () => async (dispatch) => {
   const accessToken = localStorage.getItem("accessToken");
   if (accessToken) {
     try {
+      dispatch({ type: AUTH_LOADING });
       const { data } = await api.getUserProfile();
       dispatch({ type: AUTH_SUCCESS, payload: data.user });
     } catch (error) {
