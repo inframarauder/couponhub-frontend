@@ -60,6 +60,7 @@ const apiCalls = {
   createCoupon: (body) => api.post(`/coupons/create`, body),
   listCoupons: (filters = {}) => api.get(`/coupons/list`, { params: filters }),
   buyCoupon: (body) => api.put(`/coupons/buy`, body),
+  reportCoupon: (body) => api.post(`/coupons/report`, body),
 };
 
 export default apiCalls;

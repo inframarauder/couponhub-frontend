@@ -51,7 +51,7 @@ const MyCoupons = ({ auth }) => {
         {state.coupons.length > 0 &&
           state.coupons.map((coupon) => (
             <Col key={coupon._id} sm="6">
-              <CouponCard coupon={coupon} />
+              <CouponCard coupon={coupon} showReport={true} />
             </Col>
           ))}
       </Row>
