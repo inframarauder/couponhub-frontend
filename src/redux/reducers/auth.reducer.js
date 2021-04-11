@@ -1,9 +1,7 @@
 import {
   AUTH_FAILURE,
   AUTH_SUCCESS,
-  USER_FETCH_FAILURE,
-  USER_FETCH_SUCCESS,
-  SET_LOADING,
+  AUTH_LOADING,
   LOGOUT,
 } from "../actionTypes";
 
@@ -16,7 +14,7 @@ const initialState = {
 function reducer(state = initialState, action) {
   const { type, payload } = action;
   switch (type) {
-    case SET_LOADING:
+    case AUTH_LOADING:
       return { ...state, loading: true };
     case AUTH_FAILURE:
       return { ...state, loading: false };
@@ -24,10 +22,6 @@ function reducer(state = initialState, action) {
       return { ...state, loading: false, isLoggedIn: true, user: payload };
     case LOGOUT:
       return { ...state, user: null, isLoggedIn: false, loading: false };
-    case USER_FETCH_SUCCESS:
-      return { ...state, user: payload, loading: false };
-    case USER_FETCH_FAILURE:
-      return { ...state, user: null, loading: false };
     default:
       return { ...state };
   }

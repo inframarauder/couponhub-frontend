@@ -15,7 +15,7 @@ api.interceptors.request.use(
   }
 );
 
-axios.interceptors.response.use(
+api.interceptors.response.use(
   (response) => {
     return response;
   },
@@ -29,14 +29,14 @@ axios.interceptors.response.use(
       !originalRequest._retry
     ) {
       originalRequest._retry = true;
-      return axios
-        .post(`${process.env.REACT_APP_BASE_URL}/api/user/refresh_token`, {
+      return api
+        .post(`${process.env.REACT_APP_BASE_URL}/users/refresh_token`, {
           refreshToken,
         })
         .then((res) => {
           if (res.status === 200) {
             localStorage.setItem("accessToken", res.data.accessToken);
-            return axios(originalRequest);
+            return api(originalRequest);
           }
         });
     }

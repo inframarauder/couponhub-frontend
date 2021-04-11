@@ -1,9 +1,7 @@
 import {
-  SET_LOADING,
+  AUTH_LOADING,
   AUTH_FAILURE,
   AUTH_SUCCESS,
-  USER_FETCH_FAILURE,
-  USER_FETCH_SUCCESS,
   LOGOUT,
 } from "../actionTypes";
 import api from "../../utils/api";
@@ -12,7 +10,7 @@ import jwt from "jsonwebtoken";
 import { toast } from "react-toastify";
 
 export const plainAuth = (type, body) => async (dispatch) => {
-  dispatch({ type: SET_LOADING });
+  dispatch({ type: AUTH_LOADING });
   try {
     const { data } =
       type === "signup" ? await api.signup(body) : await api.login(body);
@@ -31,7 +29,7 @@ export const plainAuth = (type, body) => async (dispatch) => {
 
 export const verifyEmail = (body) => async (dispatch) => {
   console.log("here");
-  dispatch({ type: SET_LOADING });
+  dispatch({ type: AUTH_LOADING });
   try {
     const { data } = await api.verifyEmail(body);
     localStorage.setItem("accessToken", data.accessToken); //reset jwt with updated token
@@ -46,24 +44,15 @@ export const verifyEmail = (body) => async (dispatch) => {
   }
 };
 
-export const fetchUserProfile = (userId) => async (dispatch) => {
-  dispatch({ type: SET_LOADING });
-  try {
-    const { data } = await api.getUserProfile(userId);
-    dispatch({ type: USER_FETCH_SUCCESS, payload: data });
-  } catch (error) {
-    errorHandler(error, USER_FETCH_FAILURE, dispatch);
-  }
-};
-
-export const checkAuth = () => (dispatch) => {
+export const checkAuth = () => async (dispatch) => {
   const accessToken = localStorage.getItem("accessToken");
   if (accessToken) {
-    const { user } = jwt.verify(
-      accessToken,
-      process.env.REACT_APP_ACCESS_TOKEN_SECRET
-    );
-    dispatch({ type: AUTH_SUCCESS, payload: user });
+    try {
+      const { data } = await api.getUserProfile();
+      dispatch({ type: AUTH_SUCCESS, payload: data.user });
+    } catch (error) {
+      errorHandler(error, AUTH_FAILURE, dispatch);
+    }
   }
 };
 
