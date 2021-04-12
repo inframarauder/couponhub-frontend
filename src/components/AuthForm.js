@@ -9,10 +9,11 @@ import {
   InputGroup,
 } from "react-bootstrap";
 import { Redirect } from "react-router-dom";
-import { plainAuth } from "../redux/actions/auth.actions";
+import { authenticate } from "../redux/actions/auth.actions";
 import Spinner from "./Spinner";
+import { toast } from "react-toastify";
 
-const AuthForm = ({ type, auth, plainAuth }) => {
+const AuthForm = ({ type, auth, authenticate }) => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -34,10 +35,13 @@ const AuthForm = ({ type, auth, plainAuth }) => {
     if (type === "login") {
       delete formData["name"];
     }
-    plainAuth(type, formData);
+    authenticate(type, formData);
   };
 
-  const responseGoogle = (res) => console.log(res);
+  const handleGoogleAuth = (res) => {
+    const { tokenId } = res;
+    authenticate("google", { tokenId });
+  };
 
   return auth.loading ? (
     <Spinner />
@@ -58,19 +62,22 @@ const AuthForm = ({ type, auth, plainAuth }) => {
           <hr />
         </legend>
         <GoogleLogin
-          clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
+          clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
           render={(renderProps) => (
             <Button
               className="form_button_coupon"
               onClick={renderProps.onClick}
-              disabled={renderProps.disabled}
+              disabled={false}
             >
               <i className="fa fa-google"></i> &nbsp; Continue with Google
             </Button>
           )}
           buttonText="Login"
-          onSuccess={responseGoogle}
-          onFailure={responseGoogle}
+          onSuccess={handleGoogleAuth}
+          onFailure={(err) => {
+            console.error(err);
+            toast.error("Google login failed!");
+          }}
           cookiePolicy={"single_host_origin"}
         />
         <hr />
@@ -140,7 +147,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  plainAuth: (type, body) => dispatch(plainAuth(type, body)),
+  authenticate: (type, body) => dispatch(authenticate(type, body)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AuthForm);

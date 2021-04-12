@@ -48,7 +48,7 @@ const Header = ({ auth, logout }) => {
 
               <Dropdown.Menu>
                 <Dropdown.Item className="dropdown_link">
-                  <div class="username_dropdown">
+                  <div className="username_dropdown">
                     <strong>😃 {auth.user?.name}</strong>
                     <br />
                     <small>{auth.user?.email}</small>
@@ -80,7 +80,7 @@ const Header = ({ auth, logout }) => {
                   className="Logout_button dropdown_link"
                   onClick={() => logout()}
                 >
-                  Logout &nbsp;&nbsp;<i class="fas fa-sign-out-alt"></i>
+                  Logout &nbsp;&nbsp;<i className="fas fa-sign-out-alt"></i>
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>{" "}

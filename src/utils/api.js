@@ -49,6 +49,7 @@ const apiCalls = {
 
   signup: (body) => api.post(`/users/signup`, body),
   login: (body) => api.post(`/users/login`, body),
+  googleAuth: (body) => api.post("/users/google_auth", body),
   sendVerifiationEmail: () => api.put(`/users/send_verification_mail`),
   verifyEmail: (body) => api.put(`/users/verify_email`, body),
   getUserProfile: () => api.get(`/users/profile`),
