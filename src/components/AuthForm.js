@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
+import { GoogleLogin } from "react-google-login";
 import {
   Container,
   Jumbotron,
@@ -36,6 +37,8 @@ const AuthForm = ({ type, auth, plainAuth }) => {
     plainAuth(type, formData);
   };
 
+  const responseGoogle = (res) => console.log(res);
+
   return auth.loading ? (
     <Spinner />
   ) : auth.isLoggedIn ? (
@@ -54,6 +57,24 @@ const AuthForm = ({ type, auth, plainAuth }) => {
           </h3>
           <hr />
         </legend>
+        <GoogleLogin
+          clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
+          render={(renderProps) => (
+            <Button
+              className="form_button_coupon"
+              onClick={renderProps.onClick}
+              disabled={renderProps.disabled}
+            >
+              <i className="fa fa-google"></i> &nbsp; Continue with Google
+            </Button>
+          )}
+          buttonText="Login"
+          onSuccess={responseGoogle}
+          onFailure={responseGoogle}
+          cookiePolicy={"single_host_origin"}
+        />
+        <hr />
+        <h4 className="text-center">OR</h4>
         <Form onSubmit={handleSubmit}>
           <Form.Group>
             <Form.Label>🍩 Email address</Form.Label>
