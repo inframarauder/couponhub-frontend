@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { Container, Jumbotron, Form, Button } from "react-bootstrap";
+import {
+  Container,
+  Jumbotron,
+  Form,
+  Button,
+  InputGroup,
+} from "react-bootstrap";
 import { Redirect } from "react-router-dom";
 import { plainAuth } from "../redux/actions/auth.actions";
 import Spinner from "./Spinner";
@@ -12,8 +18,14 @@ const AuthForm = ({ type, auth, plainAuth }) => {
     name: "",
   });
 
+  const [passwordType, setPasswordType] = useState("password");
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const togglePasswordType = () => {
+    setPasswordType((state) => (state === "password" ? "text" : "password"));
   };
 
   const handleSubmit = (e) => {
@@ -38,7 +50,7 @@ const AuthForm = ({ type, auth, plainAuth }) => {
               fontWeight: "700",
             }}
           >
-            🤠 Login to SubSwap
+            🤠 {type === "signup" ? "Signup for" : "Log in to"} CouponHub
           </h3>
           <hr />
         </legend>
@@ -70,14 +82,28 @@ const AuthForm = ({ type, auth, plainAuth }) => {
 
           <Form.Group>
             <Form.Label>🍘 Password</Form.Label>
-            <Form.Control
-              type="password"
-              placeholder="Password"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              required
-            />
+            <InputGroup>
+              <Form.Control
+                type={passwordType}
+                placeholder="Password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                required
+              />
+              <InputGroup.Append>
+                <InputGroup.Text
+                  style={{ cursor: "pointer" }}
+                  onClick={() => togglePasswordType()}
+                >
+                  {passwordType === "password" ? (
+                    <i className="fa fa-eye"></i>
+                  ) : (
+                    <i className="fa fa-eye-slash"></i>
+                  )}
+                </InputGroup.Text>
+              </InputGroup.Append>
+            </InputGroup>
           </Form.Group>
           <Button className="form_button_coupon" type="submit">
             {type === "signup" ? " Sign up 🤯" : "Log in 🍜"}
