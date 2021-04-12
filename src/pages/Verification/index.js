@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { Container, Form, Button } from "react-bootstrap";
-import { toast } from "react-toastify";
 import api from "../../utils/api";
 import { Spinner } from "../../components";
+import { verifyEmail } from "../../redux/actions/auth.actions";
 
-const Verification = ({ auth }) => {
+const Verification = ({ auth, verifyEmail }) => {
   useEffect(
     () =>
       !auth.loading &&
@@ -15,27 +15,14 @@ const Verification = ({ auth }) => {
   );
 
   const [formData, setFormData] = useState({ code: "" });
-  const [loading, setLoding] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: Number(e.target.value) });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setLoding(true);
-    try {
-      const { data } = await api.verifyEmail(formData);
-      toast.success(data.message);
-      localStorage.setItem("token", data.token); //reset jwt with updated token
-      window.location.reload();
-    } catch (error) {
-      console.error(error);
-      if (error.response) {
-        toast.error(error.response.data.error);
-      }
-    }
-    setLoding(false);
+    verifyEmail(formData);
   };
 
   const handleResend = () => {
@@ -70,7 +57,7 @@ const Verification = ({ auth }) => {
         </a>
       </p>
     </Container>
-  ) : loading ? (
+  ) : auth.loading ? (
     <Spinner />
   ) : (
     <Container
@@ -122,5 +109,8 @@ const Verification = ({ auth }) => {
 };
 
 const mapStateToProps = (state) => ({ auth: state.auth });
+const mapDispatchToProps = (dispatch) => ({
+  verifyEmail: (body) => dispatch(verifyEmail(body)),
+});
 
-export default connect(mapStateToProps, null)(Verification);
+export default connect(mapStateToProps, mapDispatchToProps)(Verification);

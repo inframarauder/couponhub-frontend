@@ -1,19 +1,46 @@
 import axios from "axios";
 
-const BASE_URL = "https://couponhub.herokuapp.com/api";
-
-const api = axios.create({ baseURL: BASE_URL });
+const api = axios.create({ baseURL: process.env.REACT_APP_BASE_URL });
 
 api.interceptors.request.use(
   (config) => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      config.headers["Authorization"] = `Bearer ${token}`;
+    const accessToken = localStorage.getItem("accessToken");
+    if (accessToken) {
+      config.headers["Authorization"] = `Bearer ${accessToken}`;
     }
     return config;
   },
   (error) => {
     Promise.reject(error);
+  }
+);
+
+api.interceptors.response.use(
+  (response) => {
+    return response;
+  },
+  function (error) {
+    const originalRequest = error.config;
+    let refreshToken = localStorage.getItem("refreshToken");
+
+    if (
+      refreshToken &&
+      error.response.status === 401 &&
+      !originalRequest._retry
+    ) {
+      originalRequest._retry = true;
+      return api
+        .post(`${process.env.REACT_APP_BASE_URL}/users/refresh_token`, {
+          refreshToken,
+        })
+        .then((res) => {
+          if (res.status === 200) {
+            localStorage.setItem("accessToken", res.data.accessToken);
+            return api(originalRequest);
+          }
+        });
+    }
+    return Promise.reject(error);
   }
 );
 
@@ -24,14 +51,16 @@ const apiCalls = {
   login: (body) => api.post(`/users/login`, body),
   sendVerifiationEmail: () => api.put(`/users/send_verification_mail`),
   verifyEmail: (body) => api.put(`/users/verify_email`, body),
-  getUserProfile: (userId) => api.get(`/users/profile/${userId}`),
+  getUserProfile: () => api.get(`/users/profile`),
   deleteUser: () => api.delete(`/users/delete`),
+  logout: (refreshToken) => api.delete("/users/logout", { refreshToken }),
 
   //coupon apis
 
   createCoupon: (body) => api.post(`/coupons/create`, body),
   listCoupons: (filters = {}) => api.get(`/coupons/list`, { params: filters }),
   buyCoupon: (body) => api.put(`/coupons/buy`, body),
+  reportCoupon: (body) => api.post(`/coupons/report`, body),
 };
 
 export default apiCalls;

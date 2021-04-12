@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 import { ToastContainer } from "react-toastify";
@@ -15,9 +15,7 @@ import MyCoupons from "./pages/MyCoupons";
 import CreateCoupon from "./pages/CreateCoupon";
 
 function App() {
-  const initApp = useCallback(() => store.dispatch(checkAuth()), []);
-
-  useEffect(() => initApp(), [initApp]);
+  useEffect(() => store.dispatch(checkAuth()), []);
 
   return (
     <>

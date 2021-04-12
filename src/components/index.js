@@ -5,6 +5,7 @@ import NotFound from "./NotFound";
 import BrandBadge from "./BrandBadge";
 import PrivateRoute from "./PrivateRoute";
 import CouponCard from "./CouponCard";
+import AuthForm from "./AuthForm";
 
 export {
   Header,
@@ -14,4 +15,5 @@ export {
   BrandBadge,
   PrivateRoute,
   CouponCard,
+  AuthForm,
 };

@@ -18,7 +18,11 @@ const MyCoupons = ({ auth }) => {
         status: "sold",
         soldTo: auth.user?._id,
       });
-      setState((state) => ({ ...state, coupons: data, loading: false }));
+      setState((state) => ({
+        ...state,
+        coupons: data.coupons,
+        loading: false,
+      }));
     } catch (error) {
       console.error(error);
       if (error.response) {
@@ -44,11 +48,12 @@ const MyCoupons = ({ auth }) => {
         <hr />
       </legend>
       <Row>
-        {state.coupons.map((coupon) => (
-          <Col key={coupon._id} sm="6">
-            <CouponCard coupon={coupon} />
-          </Col>
-        ))}
+        {state.coupons.length > 0 &&
+          state.coupons.map((coupon) => (
+            <Col key={coupon._id} sm="6">
+              <CouponCard coupon={coupon} showReport={true} />
+            </Col>
+          ))}
       </Row>
     </Container>
   );

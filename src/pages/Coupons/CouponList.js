@@ -33,7 +33,7 @@ const CouponList = ({ coupons, listCoupons }) => {
     if (isConfirmed) {
       try {
         const { data } = await api.buyCoupon({ couponId });
-        toast.success(successToast(data.code), {
+        toast.success(successToast(data.coupon.code), {
           position: toast.POSITION.TOP_CENTER,
           autoClose: false,
           draggable: false,
