@@ -26,12 +26,14 @@ const MidSection = ({ auth }) => {
                     "1px 1px #F90566, 2px 2px #F90566, 3px 3px #F90566, 4px 4px #F90566, 5px 5px #F90566, 6px 6px #F90566, 7px 7px #F90566, 8px 8px #F90566, 9px 9px #F90566, 10px 10px #F90566",
                 }}
               >
-                SubSwap
+                CouponHub
               </span>
             </p>
             <p style={{ color: "white", fontWeight: "700", fontSize: "20px" }}>
-              What do you do with extra coupons that you would not need? What if you could swap them with something that you would use?<br/>
-Sounds cool? You are at the right place ;)
+              What do you do with extra coupons that you would not need? What if
+              you could swap them with something that you would use?
+              <br />
+              Sounds cool? You are at the right place ;)
             </p>
             {!auth.isLoggedIn && (
               <>

@@ -9,12 +9,24 @@ import errorHandler from "../../utils/errorHandler";
 import jwt from "jsonwebtoken";
 import { toast } from "react-toastify";
 
-export const plainAuth = (type, body) => async (dispatch) => {
+export const authenticate = (type, body) => async (dispatch) => {
   dispatch({ type: AUTH_LOADING });
   try {
-    const { data } =
-      type === "signup" ? await api.signup(body) : await api.login(body);
-    const { accessToken, refreshToken } = data;
+    let res;
+    switch (type) {
+      case "google":
+        res = await api.googleAuth(body);
+        break;
+      case "signup":
+        res = await api.signup(body);
+        break;
+      case "login":
+        res = await api.login(body);
+        break;
+      default:
+        res = null;
+    }
+    const { accessToken, refreshToken } = res.data;
     localStorage.setItem("accessToken", accessToken);
     localStorage.setItem("refreshToken", refreshToken);
     const { user } = jwt.verify(
