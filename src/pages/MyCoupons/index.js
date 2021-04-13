@@ -1,40 +1,13 @@
-import React, { useState, useEffect, useCallback } from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import { toast } from "react-toastify";
+import React, { useEffect } from "react";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import { connect } from "react-redux";
-import api from "../../utils/api";
 import { Spinner, CouponCard } from "../../components/";
+import { listCoupons } from "../../redux/actions/coupons.actions";
 
-const MyCoupons = ({ auth }) => {
-  const [state, setState] = useState({
-    coupons: [],
-    loading: false,
-  });
+const MyCoupons = ({ coupons, listCoupons }) => {
+  useEffect(() => listCoupons({ status: "sold" }), [listCoupons]);
 
-  const loadMyCoupons = useCallback(async () => {
-    setState((state) => ({ ...state, loading: true }));
-    try {
-      const { data } = await api.listCoupons({
-        status: "sold",
-        soldTo: auth.user?._id,
-      });
-      setState((state) => ({
-        ...state,
-        coupons: data.coupons,
-        loading: false,
-      }));
-    } catch (error) {
-      console.error(error);
-      if (error.response) {
-        toast.error(error.response.data.error);
-      }
-      setState((state) => ({ ...state, loading: false }));
-    }
-  }, [auth.user?._id]);
-
-  useEffect(() => loadMyCoupons(), [loadMyCoupons]);
-
-  return state.loading ? (
+  return coupons.loading ? (
     <Spinner />
   ) : (
     <Container className="h-100">
@@ -48,17 +21,31 @@ const MyCoupons = ({ auth }) => {
         <hr />
       </legend>
       <Row>
-        {state.coupons.length > 0 &&
-          state.coupons.map((coupon) => (
+        {coupons.couponList.length > 0 ? (
+          coupons.couponList.map((coupon) => (
             <Col key={coupon._id} sm="6">
               <CouponCard coupon={coupon} showReport={true} />
             </Col>
-          ))}
+          ))
+        ) : (
+          <div className="text-center" style={{ margin: "auto" }}>
+            <p>You currently have no coupons</p>
+            <a href="/coupons">
+              <Button className="submit_button">Back to Explore 😃</Button>
+            </a>
+          </div>
+        )}
       </Row>
     </Container>
   );
 };
 
-const mapStateToProps = (state) => ({ auth: state.auth });
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+  coupons: state.coupons,
+});
+const mapDispatchToProps = (dispatch) => ({
+  listCoupons: (filters) => dispatch(listCoupons(filters)),
+});
 
-export default connect(mapStateToProps, null)(MyCoupons);
+export default connect(mapStateToProps, mapDispatchToProps)(MyCoupons);

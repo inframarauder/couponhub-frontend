@@ -35,15 +35,13 @@ const CouponCard = ({ coupon, showBuy, handleBuy, showReport }) => {
     <Spinner />
   ) : (
     <>
-      <Card className="my-4">
+      <Card className="my-4" style={{ height: "25rem" }}>
         <Card.Header>
           <Card.Text>
             <span>
               <div className="row">
                 <div className="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                  <b className="coupon_title">
-                    {coupon.title.substring(0, 70) + "..."}
-                  </b>
+                  <b className="coupon_title">{coupon.title}</b>
                 </div>
                 <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                   <small className="coupon_tag" style={{ float: "right" }}>
@@ -73,17 +71,17 @@ const CouponCard = ({ coupon, showBuy, handleBuy, showReport }) => {
           >
             @ {coupon.redeemPlatform}
           </span>
+          {coupon.category && (
+            <small className="coupon_tag" style={{ float: "right" }}>
+              {coupon.category.toUpperCase()}
+            </small>
+          )}
           <Card.Title style={{ marginTop: "5px" }}>
             <b>{coupon.code}</b>
           </Card.Title>
 
-          <Card.Text
-            style={{
-              minHeight: "80px",
-            }}
-          >
-            {coupon.description}
-          </Card.Text>
+          <Card.Text>{coupon.description}</Card.Text>
+
           <Card.Text>
             Expires On{" "}
             <span

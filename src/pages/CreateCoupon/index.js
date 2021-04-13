@@ -13,13 +13,9 @@ const CreateCoupon = () => {
     type: "percentage",
     title: "",
     description: "",
-    amount: 0,
+    category: "",
   });
   const [loading, setLoading] = useState(false);
-
-  const hideOrShowAmount = () => {
-    return formData.type === "free" ? "hide" : "show";
-  };
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -91,15 +87,35 @@ const CreateCoupon = () => {
               </Form.Group>
             </Col>
           </Form.Row>
-          <Form.Group className={hideOrShowAmount()}>
-            <Form.Label>💰 Amount</Form.Label>
+          <Form.Group>
+            <Form.Label>💰 Cateogory</Form.Label>
             <Form.Control
-              as="input"
-              type="number"
-              name="amount"
-              value={formData.amount}
+              as="select"
+              name="category"
               onChange={handleChange}
-            />
+              custom
+            >
+              {[
+                "All",
+                "Food",
+                "Fashion",
+                "Education",
+                "Tech",
+                "Healthcare",
+                "Lifestyle",
+                "Finance",
+                "Shopping",
+                "Streaming",
+                "Gaming",
+                "Travel",
+                "Utilities",
+                "Other",
+              ].map((cat, i) => (
+                <option value={cat} key={i}>
+                  {cat}
+                </option>
+              ))}
+            </Form.Control>
           </Form.Group>
           <Form.Row>
             <Col sm="6">
