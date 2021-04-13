@@ -79,7 +79,7 @@ const CouponList = ({ coupons, listCoupons, filters }) => {
         <div className="center-content">
           <Button
             variant="primary"
-            onClick={() => setEndIndex(endIndex + 3)}
+            onClick={() => setEndIndex(endIndex + 4)}
             size="lg"
           >
             .... Show More

@@ -13,3 +13,10 @@ _Help us keep CouponHub spam free, trustworthy and authentic :)_
 - `REACT_APP_GOOGLE_CLIENT_ID`
 
 Feel free to raise an issue/submit a PR to add more interesting features to the platform. :)
+
+**TODOS:**
+
+- About/Community guidelines page
+- password reset
+- user profile page
+- user account deletion

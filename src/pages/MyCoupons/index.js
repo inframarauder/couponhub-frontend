@@ -4,11 +4,8 @@ import { connect } from "react-redux";
 import { Spinner, CouponCard } from "../../components/";
 import { listCoupons } from "../../redux/actions/coupons.actions";
 
-const MyCoupons = ({ auth, coupons, listCoupons }) => {
-  useEffect(() => listCoupons({ postedBy: auth?.user?._id }), [
-    auth?.user?._id,
-    listCoupons,
-  ]);
+const MyCoupons = ({ coupons, listCoupons }) => {
+  useEffect(() => listCoupons({ status: "sold" }), [listCoupons]);
 
   return coupons.loading ? (
     <Spinner />
