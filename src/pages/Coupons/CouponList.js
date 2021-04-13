@@ -5,8 +5,8 @@ import { listCoupons } from "../../redux/actions/coupons.actions";
 import { Spinner, CouponCard } from "../../components";
 import api from "../../utils/api";
 
-const CouponList = ({ coupons, listCoupons }) => {
-  useEffect(() => listCoupons(), [listCoupons]);
+const CouponList = ({ coupons, listCoupons, type }) => {
+  useEffect(() => listCoupons({ type }), [listCoupons, type]);
 
   const successToast = (code) => (
     <div className="text-center">
@@ -72,7 +72,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  listCoupons: () => dispatch(listCoupons()),
+  listCoupons: (filters) => dispatch(listCoupons(filters)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CouponList);
