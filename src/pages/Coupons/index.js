@@ -9,11 +9,22 @@ const Coupons = () => {
   return (
     <Container className="my-4 h-100">
       <FilterForm />
-      <legend className="searchBoxText">🤗 available coupons</legend>
+      <legend className="searchBoxText text-center">
+        🤗 available coupons
+      </legend>
       <Tabs
         id="controlled-tab-example"
         activeKey={key}
         onSelect={(k) => setKey(k)}
+        variant="pills"
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center",
+          alignItems: "center",
+          padding: "10px",
+          margin: "20px",
+        }}
       >
         <Tab eventKey="All" title="All">
           <CouponList type={key} />
