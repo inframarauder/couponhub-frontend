@@ -5,8 +5,8 @@ import { listCoupons } from "../../redux/actions/coupons.actions";
 import { Spinner, CouponCard } from "../../components";
 import api from "../../utils/api";
 
-const CouponList = ({ coupons, listCoupons, type }) => {
-  useEffect(() => listCoupons({ type }), [listCoupons, type]);
+const CouponList = ({ coupons, listCoupons, filters }) => {
+  useEffect(() => listCoupons(filters), [listCoupons, filters]);
 
   const successToast = (code) => (
     <div className="text-center">
