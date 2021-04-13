@@ -1,12 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { toast } from "react-toastify";
 import { listCoupons } from "../../redux/actions/coupons.actions";
 import { Spinner, CouponCard } from "../../components";
 import api from "../../utils/api";
+import { Button } from "react-bootstrap";
 
 const CouponList = ({ coupons, listCoupons, filters }) => {
   useEffect(() => listCoupons(filters), [listCoupons, filters]);
+
+  const [endIndex, setEndIndex] = useState(3);
 
   const successToast = (code) => (
     <div className="text-center">
@@ -57,12 +60,32 @@ const CouponList = ({ coupons, listCoupons, filters }) => {
         🦄😇 {coupons.couponList.length} coupon(s) found...
       </legend>
       <div className="row">
-        {coupons.couponList.map((coupon) => (
-          <div key={coupon._id} className="col-lg-6">
-            <CouponCard coupon={coupon} showBuy={true} handleBuy={handleBuy} />
-          </div>
-        ))}
+        {coupons.couponList.map((coupon, index) =>
+          index <= endIndex ? (
+            <div key={coupon._id} className="col-lg-6">
+              <CouponCard
+                coupon={coupon}
+                showBuy={true}
+                handleBuy={handleBuy}
+              />
+            </div>
+          ) : (
+            ""
+          )
+        )}
       </div>
+
+      {endIndex < coupons.couponList.length - 1 && (
+        <div className="center-content">
+          <Button
+            variant="primary"
+            onClick={() => setEndIndex(endIndex + 3)}
+            size="lg"
+          >
+            .... Show More
+          </Button>
+        </div>
+      )}
     </>
   );
 };
