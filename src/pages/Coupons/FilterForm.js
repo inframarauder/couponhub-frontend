@@ -6,7 +6,7 @@ import { listCoupons } from "../../redux/actions/coupons.actions";
 const FilterForm = ({ listCoupons }) => {
   const [formData, setFormData] = useState({
     searchText: "",
-    type: "all",
+    category: "All",
   });
 
   const handleChange = (e) => {
@@ -22,34 +22,52 @@ const FilterForm = ({ listCoupons }) => {
     <div className="center-content search-form">
       <legend className="searchBoxText">🧙 filters</legend>
 
-      <Form className="my-4 search-form-inside" onSubmit={handleSubmit}>
+      <Form className="my-4 search-form-inside" onSubmit={handleSubmit} inline>
         <Form.Group className="search-form-inside">
-          <Form.Label>▶️ Search</Form.Label>
+          <Form.Label className="my-1 mr-2">▶️ Search</Form.Label>
           <Form.Control
+            className="my-1 mr-2"
             type="text"
-            placeholder="Search by platform name, title, description"
+            placeholder="Search by platform name"
             as="input"
-            htmlSize="80"
             name="searchText"
             value={formData.searchText}
             onChange={handleChange}
           />
         </Form.Group>
         <Form.Group className="search-form-inside">
-          <Form.Label>💠 Type of discount</Form.Label>
-          <Form.Control as="select" name="type" onChange={handleChange} custom>
-            <option value="all">All</option>
-            <option value="flat">Flat</option>
-            <option value="percentage">Percentage</option>
-            <option value="free">Free</option>
+          <Form.Label className="my-1 mr-2">💠 Category</Form.Label>
+          <Form.Control
+            as="select"
+            name="category"
+            onChange={handleChange}
+            custom
+            className="my-1 mr-2"
+          >
+            {[
+              "All",
+              "Food",
+              "Fashion",
+              "Education",
+              "Tech",
+              "Healthcare",
+              "Lifestyle",
+              "Finance",
+              "Shopping",
+              "Streaming",
+              "Gaming",
+              "Travel",
+              "Utilities",
+              "Other",
+            ].map((cat, i) => (
+              <option value={cat} key={i}>
+                {cat}
+              </option>
+            ))}
           </Form.Control>
         </Form.Group>
         <hr />
-        <Button
-          type="submit"
-          className="form_button"
-          style={{ padding: "15px", width: "100%" }}
-        >
+        <Button type="submit" className="form_button">
           🖖 Apply Filters
         </Button>
       </Form>
