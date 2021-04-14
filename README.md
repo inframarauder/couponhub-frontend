@@ -1,4 +1,6 @@
-#couponhub-frontend
+# couponhub-frontend
+
+**About CouponHub**
 
 CouponHub is a platform that lets you swap your unused/unuseful coupons obtained from various UPI payment platforms for ones that maybe useful to you.It's simple - everytime you post a coupon, you earn one platform credit and you can use your platform credits to buy coupons from our platform.
 
@@ -6,11 +8,14 @@ Our vision is to make a trustworthy platform that people turn to before buying a
 
 _Help us keep CouponHub spam free, trustworthy and authentic :)_
 
+
 **Important Environment Varaibles**:
 
 - `REACT_APP_ACCESS_TOKEN_SECRET`
 - `REACT_APP_BASE_URL`
 - `REACT_APP_GOOGLE_CLIENT_ID`
+
+Backend (Node.js,Express,MongoDB) - https://github.com/subhasis020299/couponhub-backend
 
 Feel free to raise an issue/submit a PR to add more interesting features to the platform. :)
 
