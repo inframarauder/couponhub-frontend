@@ -13,6 +13,7 @@ import Verification from "./pages/Verification";
 import Coupons from "./pages/Coupons";
 import MyCoupons from "./pages/MyCoupons";
 import CreateCoupon from "./pages/CreateCoupon";
+import PasswordReset from "./pages/PasswordReset";
 
 function App() {
   useEffect(() => store.dispatch(checkAuth()), []);
@@ -28,6 +29,7 @@ function App() {
               <Route path="/" exact component={Home} />
               <Route path="/signup" exact component={Signup} />
               <Route path="/login" exact component={Login} />
+              <Route path="/password_reset" exact component={PasswordReset} />
               <PrivateRoute
                 path="/verification"
                 exact

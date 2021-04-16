@@ -51,7 +51,10 @@ const apiCalls = {
   login: (body) => api.post(`/users/login`, body),
   googleAuth: (body) => api.post("/users/google_auth", body),
   sendVerifiationEmail: () => api.put(`/users/send_verification_mail`),
+  sendPasswordResetMail: (body) =>
+    api.post(`/users/send_password_reset_mail`, body),
   verifyEmail: (body) => api.put(`/users/verify_email`, body),
+  resetPassword: (body) => api.put(`/users/reset_password`, body),
   getUserProfile: () => api.get(`/users/profile`),
   deleteUser: () => api.delete(`/users/delete`),
   logout: (refreshToken) => api.delete("/users/logout", { refreshToken }),
