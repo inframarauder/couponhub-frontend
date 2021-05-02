@@ -137,6 +137,9 @@ const AuthForm = ({ type, auth, authenticate }) => {
             {type === "signup" ? " Sign up 🤯" : "Log in 🍜"}
           </Button>
         </Form>
+        <p className="text-center my-4">
+          <a href="/password_reset">I have forgotten my password</a>
+        </p>
       </Jumbotron>
     </Container>
   );
