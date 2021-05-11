@@ -6,8 +6,17 @@ const MidSection = ({ auth }) => {
   return (
     <Jumbotron fluid style={{ background: "rgb(0,0,0)" }}>
       <Container>
-        <div className="row">
-          <div className="col-lg-6 col-md-6 page-content">
+        <div
+          className="row"
+          style={{
+            background:
+              "url('https://media.giphy.com/media/h8DFgib7rahX38a522/giphy.gif')",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            borderRadius: "2px",
+          }}
+        >
+          <div className="col-lg-12 col-md-12 page-content text-center">
             <p className="display-3">
               {" "}
               {/* <b
@@ -23,18 +32,29 @@ const MidSection = ({ auth }) => {
                   fontFamily: "'Dela Gothic One', cursive",
                   transform: "translate3d(-10px, -10px, 0px)",
                   textShadow:
-                    "1px 1px #F90566, 2px 2px #F90566, 3px 3px #F90566, 4px 4px #F90566, 5px 5px #F90566, 6px 6px #F90566, 7px 7px #F90566, 8px 8px #F90566, 9px 9px #F90566, 10px 10px #F90566",
+                    "1px 1px #0063db, 2px 2px #0063db, 3px 3px #0063db, 4px 4px #0063db, 5px 5px #0063db, 6px 6px #0063db, 7px 7px #0063db, 8px 8px #0063db, 9px 9px #0063db, 10px 10px #0063db",
                 }}
               >
                 CouponHub
               </span>
             </p>
-            <p style={{ color: "white", fontWeight: "700", fontSize: "20px" }}>
-              What do you do with extra coupons that you would not need? What if
-              you could swap them with something that you would use?
+            <p
+              style={{
+                color: "white",
+                fontWeight: "700",
+                fontSize: "18px",
+                width: "90%",
+                maxWidth: "700px",
+                margin: "5px auto",
+              }}
+            >
+              What do you do with extra coupons that you would not need?
+              <br /> What if you could swap them with something that you would
+              use?
               <br />
               Sounds cool? You are at the right place ;)
             </p>
+            <br />
             {!auth.isLoggedIn && (
               <>
                 <p>
@@ -99,16 +119,6 @@ const MidSection = ({ auth }) => {
                 <br />
               </>
             )}
-          </div>
-
-          <div className="col-lg-6 col-md-6">
-            <img
-              className="hero-image"
-              src="https://media.giphy.com/media/J147q8Ip0EmLQFJOPZ/giphy.gif"
-              width="80%"
-              style={{ borderRadius: "10px" }}
-              alt="coupon"
-            />
           </div>
         </div>
       </Container>
