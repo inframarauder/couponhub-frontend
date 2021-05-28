@@ -10,7 +10,7 @@ const MidSection = ({ auth }) => {
           className="row"
           style={{
             background:
-              "url('https://media.giphy.com/media/h8DFgib7rahX38a522/giphy.gif')",
+              "url('https://media.giphy.com/media/9JnM68uYkoQI2NCXuW/giphy.gif')",
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
             borderRadius: "2px",
