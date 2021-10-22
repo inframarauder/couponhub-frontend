@@ -17,7 +17,7 @@ const Header = ({ auth, logout }) => {
         <Navbar.Brand href="/">
           <img
             src="https://media.giphy.com/media/cJY9brU09bZf1StnQC/giphy.gif"
-            width="60px"
+            width="46px"
             alt="nav-brand-gif"
           />
         </Navbar.Brand>
@@ -31,7 +31,7 @@ const Header = ({ auth, logout }) => {
               🤠 My Coupons
             </Nav.Link>
             <Nav.Link href="/post_coupon" active className="header_link">
-              💜 Add a Coupon
+            🧢 Add a Coupon
             </Nav.Link>
           </Nav>
           <Nav className="ml-auto mr-4">

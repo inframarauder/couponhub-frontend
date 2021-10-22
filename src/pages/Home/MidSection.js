@@ -113,7 +113,7 @@ const MidSection = ({ auth }) => {
                     size="lg"
                     onClick={() => (window.location.href = "/post_coupon")}
                   >
-                    💜 Add a Coupon
+                    🧢 Add a Coupon
                   </Button>
                 </p>
                 <br />

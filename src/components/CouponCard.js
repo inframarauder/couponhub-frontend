@@ -40,14 +40,14 @@ const CouponCard = ({ coupon, showBuy, handleBuy, showReport }) => {
           <Card.Text>
             <span>
               <div className="row">
-                <div className="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                   <b className="coupon_title">{coupon.title}</b>
                 </div>
-                <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                  <small className="coupon_tag" style={{ float: "right" }}>
+                {/* <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                  <small className="coupon_tag" style={{ float: "left" }}>
                     {coupon.type.toUpperCase()}
                   </small>
-                </div>
+                </div> */}
               </div>
             </span>
           </Card.Text>
@@ -99,7 +99,7 @@ const CouponCard = ({ coupon, showBuy, handleBuy, showReport }) => {
             >
               {new Date(coupon.expiryDate).toDateString()}{" "}
               <img
-                src="https://media.giphy.com/media/Ctdo2F6D4dZBnXyB7A/giphy.gif"
+                src="https://media.giphy.com/media/3dbEAOOmPXnTpMqgF5/giphy.gif"
                 width="30px"
                 alt="expiry-gif"
               />
