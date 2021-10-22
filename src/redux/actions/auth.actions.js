@@ -1,57 +1,81 @@
 import {
-  SET_LOADING,
+  AUTH_LOADING,
   AUTH_FAILURE,
   AUTH_SUCCESS,
-  USER_FETCH_FAILURE,
-  USER_FETCH_SUCCESS,
   LOGOUT,
 } from "../actionTypes";
 import api from "../../utils/api";
 import errorHandler from "../../utils/errorHandler";
+import jwt from "jsonwebtoken";
+import { toast } from "react-toastify";
 
-export const signup = (body) => async (dispatch) => {
-  dispatch({ type: SET_LOADING });
+export const authenticate = (type, body) => async (dispatch) => {
+  dispatch({ type: AUTH_LOADING });
   try {
-    const { data } = await api.signup(body);
-    localStorage.setItem("token", data.token);
-    dispatch({ type: AUTH_SUCCESS });
-    dispatch(fetchUserProfile("me"));
+    let res;
+    switch (type) {
+      case "google":
+        res = await api.googleAuth(body);
+        break;
+      case "signup":
+        res = await api.signup(body);
+        break;
+      case "login":
+        res = await api.login(body);
+        break;
+      default:
+        res = null;
+    }
+    const { accessToken, refreshToken } = res.data;
+    localStorage.setItem("accessToken", accessToken);
+    localStorage.setItem("refreshToken", refreshToken);
+    const { user } = jwt.verify(
+      accessToken,
+      process.env.REACT_APP_ACCESS_TOKEN_SECRET
+    );
+    dispatch({ type: AUTH_SUCCESS, payload: user });
   } catch (error) {
     errorHandler(error, AUTH_FAILURE, dispatch);
   }
 };
 
-export const login = (body) => async (dispatch) => {
-  dispatch({ type: SET_LOADING });
+export const verifyEmail = (body) => async (dispatch) => {
+  console.log("here");
+  dispatch({ type: AUTH_LOADING });
   try {
-    const { data } = await api.login(body);
-    localStorage.setItem("token", data.token);
-    dispatch({ type: AUTH_SUCCESS });
-    dispatch(fetchUserProfile("me"));
+    const { data } = await api.verifyEmail(body);
+    localStorage.setItem("accessToken", data.accessToken); //reset jwt with updated token
+    const { user } = jwt.verify(
+      data.accessToken,
+      process.env.REACT_APP_ACCESS_TOKEN_SECRET
+    );
+    toast.success(data.message);
+    dispatch({ type: AUTH_SUCCESS, payload: user });
   } catch (error) {
     errorHandler(error, AUTH_FAILURE, dispatch);
   }
 };
 
-export const fetchUserProfile = (userId) => async (dispatch) => {
-  dispatch({ type: SET_LOADING });
+export const checkAuth = () => async (dispatch) => {
+  const accessToken = localStorage.getItem("accessToken");
+  if (accessToken) {
+    try {
+      dispatch({ type: AUTH_LOADING });
+      const { data } = await api.getUserProfile();
+      dispatch({ type: AUTH_SUCCESS, payload: data.user });
+    } catch (error) {
+      errorHandler(error, AUTH_FAILURE, dispatch);
+    }
+  }
+};
+
+export const logout = () => async (dispatch) => {
+  const refreshToken = localStorage.getItem("refreshToken");
   try {
-    const { data } = await api.getUserProfile(userId);
-    dispatch({ type: USER_FETCH_SUCCESS, payload: data });
+    await api.logout(refreshToken);
   } catch (error) {
-    errorHandler(error, USER_FETCH_FAILURE, dispatch);
+    console.error(error);
   }
-};
-
-export const checkAuth = () => (dispatch) => {
-  const token = localStorage.getItem("token");
-  if (token) {
-    dispatch({ type: AUTH_SUCCESS });
-    dispatch(fetchUserProfile("me"));
-  }
-};
-
-export const logout = () => (dispatch) => {
   localStorage.clear();
   dispatch({ type: LOGOUT });
 };

@@ -1,5 +1,5 @@
 import {
-  SET_LOADING,
+  COUPONS_LOADING,
   COUPON_LIST_FAILURE,
   COUPON_LIST_SUCCESS,
 } from "../actionTypes";
@@ -12,7 +12,7 @@ const initialState = {
 function reducer(state = initialState, action) {
   const { type, payload } = action;
   switch (type) {
-    case SET_LOADING:
+    case COUPONS_LOADING:
       return { ...state, loading: true };
     case COUPON_LIST_FAILURE:
       return { ...state, coupons: [], loading: false };

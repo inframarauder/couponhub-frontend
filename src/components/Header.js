@@ -4,16 +4,11 @@ import { logout } from "../redux/actions/auth.actions";
 import { Alert, Button, Navbar, Nav, Dropdown } from "react-bootstrap";
 
 const Header = ({ auth, logout }) => {
-  const handleLogout = () => {
-    logout();
-    window.location.href = "/";
-  };
-
   const shouldShowAlert = () => {
     const isVerificationPage = window.location.href.includes("verification");
     const isEmailVerified = auth.user?.isEmailVerified;
 
-    return !auth.loading && !isEmailVerified && !isVerificationPage;
+    return !isEmailVerified && !isVerificationPage;
   };
 
   return auth.isLoggedIn ? (
@@ -53,7 +48,7 @@ const Header = ({ auth, logout }) => {
 
               <Dropdown.Menu>
                 <Dropdown.Item className="dropdown_link">
-                  <div class="username_dropdown">
+                  <div className="username_dropdown">
                     <strong>😃 {auth.user?.name}</strong>
                     <br />
                     <small>{auth.user?.email}</small>
@@ -83,9 +78,9 @@ const Header = ({ auth, logout }) => {
                 <hr />
                 <Dropdown.Item
                   className="Logout_button dropdown_link"
-                  onClick={() => handleLogout()}
+                  onClick={() => logout()}
                 >
-                  Logout &nbsp;&nbsp;<i class="fas fa-sign-out-alt"></i>
+                  Logout &nbsp;&nbsp;<i className="fas fa-sign-out-alt"></i>
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>{" "}

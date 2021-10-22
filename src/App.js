@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 import { ToastContainer } from "react-toastify";
@@ -13,11 +13,10 @@ import Verification from "./pages/Verification";
 import Coupons from "./pages/Coupons";
 import MyCoupons from "./pages/MyCoupons";
 import CreateCoupon from "./pages/CreateCoupon";
+import PasswordReset from "./pages/PasswordReset";
 
 function App() {
-  const initApp = useCallback(() => store.dispatch(checkAuth()), []);
-
-  useEffect(() => initApp(), [initApp]);
+  useEffect(() => store.dispatch(checkAuth()), []);
 
   return (
     <>
@@ -30,6 +29,7 @@ function App() {
               <Route path="/" exact component={Home} />
               <Route path="/signup" exact component={Signup} />
               <Route path="/login" exact component={Login} />
+              <Route path="/password_reset" exact component={PasswordReset} />
               <PrivateRoute
                 path="/verification"
                 exact

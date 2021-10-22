@@ -20,18 +20,9 @@ const brands = [
     image: "https://media.giphy.com/media/cb62CI2NECmKcJwjnQ/giphy.gif",
   },
   {
-    title: "Tinder",
-    image: "https://media.giphy.com/media/KBPsjfgqv4t5t942qP/giphy.gif",
-  },
-  {
     title: "Pinterest",
     image: "https://media.giphy.com/media/XeMGfdq5LMc2naVQcN/giphy.gif",
   },
-  {
-    title: "Natural's Ice Cream",
-    image: "https://media.giphy.com/media/Vd90Szv80cIZEdsWuj/giphy.gif",
-  },
-
   {
     title: "Audible",
     image: "https://media.giphy.com/media/o9LLSY9OXaU7jN68u5/giphy.gif",
@@ -45,10 +36,6 @@ const brands = [
     image: "https://media.giphy.com/media/H5BN5sx4DWHytWAhig/giphy.gif",
   },
   {
-    title: "GitHub",
-    image: "https://media.giphy.com/media/U2LqsKYUCXCZp5u2jP/giphy.gif",
-  },
-  {
     title: "Ajio",
     image: "https://media.giphy.com/media/gioYKLqOWLrcyRyMvw/giphy.gif",
   },
@@ -60,22 +47,10 @@ const brands = [
     title: "Zerodha",
     image: "https://media.giphy.com/media/JU4XLgeZmMjibeOkUx/giphy.gif",
   },
-  {
-    title: "CoolWinks",
-    image: "https://media.giphy.com/media/KxLGI20t75msU/giphy.gif",
-  },
-  {
-    title: "WOW Skin Care",
-    image: "https://media.giphy.com/media/Td9W6ZjYO6iVNM5sWB/giphy.gif",
-  },
 
   {
     title: "Zomato",
     image: "https://media.giphy.com/media/dVnewBNxCk0qWRmuU8/giphy.gif",
-  },
-  {
-    title: "Swiggy",
-    image: "https://media.giphy.com/media/Y2mS9KIOV62mMXqQx6/giphy.gif",
   },
 ];
 
@@ -85,11 +60,11 @@ const TopBrands = () => {
       <h4 className="text-center display-4">
         <b
           style={{
-            color: "rgb(255, 208, 121)",
+            color: "rgb(255, 255, 255)",
             fontFamily: "'Dela Gothic One', cursive",
             transform: "translate3d(-10px, -10px, 0px)",
             textShadow:
-              "1px 1px #F90566, 2px 2px #F90566, 3px 3px #F90566, 4px 4px #F90566, 5px 5px #F90566, 6px 6px #F90566, 7px 7px #F90566, 8px 8px #F90566, 9px 9px #F90566, 10px 10px #F90566",
+              "1px 1px #0063db, 2px 2px #0063db, 3px 3px #0063db, 4px 4px #0063db, 5px 5px #0063db, 6px 6px #0063db, 7px 7px #0063db, 8px 8px #0063db, 9px 9px #0063db, 10px 10px #0063db",
           }}
         >
           top brands
