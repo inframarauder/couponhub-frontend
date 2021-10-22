@@ -87,7 +87,7 @@ const AuthForm = ({ type, auth, authenticate }) => {
             <Form.Label>🍩 Email address</Form.Label>
             <Form.Control
               type="email"
-              placeholder="Enter email"
+              placeholder="Your digital address"
               name="email"
               value={formData.email}
               onChange={handleChange}
@@ -99,7 +99,7 @@ const AuthForm = ({ type, auth, authenticate }) => {
               <Form.Label>🤠 Name</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Enter your name"
+                placeholder="What we would call you"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
@@ -113,7 +113,7 @@ const AuthForm = ({ type, auth, authenticate }) => {
             <InputGroup>
               <Form.Control
                 type={passwordType}
-                placeholder="Password"
+                placeholder="Your own secret key"
                 name="password"
                 value={formData.password}
                 onChange={handleChange}

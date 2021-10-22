@@ -6,7 +6,7 @@ const Footer = () => {
       <br />
       <div className="center-content">
         <span className="foot_float_left">
-          Made with ❤️ by{" "}
+          Made with <i class="fas fa-heart"></i> by{" "}
           <a href="https://twitter.com/shuvam360" target="blank">
             <b>@shuvam360</b>
           </a>{" "}
@@ -23,7 +23,7 @@ const Footer = () => {
             width="20px"
             alt="Y Combinator Logo"
           />{" "}
-          <span style={{ color: "rgb(255, 170, 100)" }}>Combinator</span>{" "}
+          <span style={{ color: "rgb(255, 167, 109)" }}>Combinator</span>{" "}
           company
         </span>
         <br />

@@ -8,7 +8,14 @@ body {
 
 /* Footer */
 
+.fa-heart {
+  color :rgb(255, 111, 92);
+
+  margin: 0px 4px;
+}
+
 a {
+  color : #49a1ff!important;
   transition: all 0.2s ease !important;
 }
 a:hover {
@@ -64,7 +71,7 @@ a:hover {
 }
 
 .header_link:hover {
-  background-color: rgb(40, 122, 204) !important;
+  background-color: rgb(107, 91, 255) !important;
 }
 
 .my-4 {
@@ -178,7 +185,9 @@ textarea {
 }
 
 .search-form-inside {
-  background-color: rgb(10, 10, 10) !important;
+  background-color: rgb(20, 20, 20) !important;
+  padding: 4px 6px;
+  border-radius: 6px;
   font-weight: 600 !important;
 }
 
@@ -210,8 +219,8 @@ textarea {
 }
 
 .card {
-  border-top: 4px solid rgb(117, 101, 255) !important;
   background: rgb(20, 20, 20) !important;
+  border-radius: 6px;
   transition: all 0.2s ease !important;
 }
 
@@ -228,12 +237,12 @@ textarea {
 
 .coupon_title {
   font-weight: 700;
-  color: rgb(88, 155, 255);
+  color: rgb(99, 161, 253);
   font-size: 17px;
 }
 
 .Toastify__toast--success {
-  background: #0966cb !important;
+  background: #1c80eb !important;
   transition: all 0.2s ease !important;
 }
 
@@ -247,7 +256,7 @@ textarea {
 }
 
 .form_button_coupon {
-  background-color: rgb(93, 75, 255) !important;
+  background-color: rgb(101, 83, 255) !important;
   border: none !important;
   padding: 20px 40px !important;
   width: 100%;
@@ -257,11 +266,11 @@ textarea {
 }
 
 .form_button_coupon:hover {
-  background-color: rgb(41, 18, 247) !important;
+  background-color: rgb(116, 101, 255) !important;
 }
 
 .alert-box {
-  background-color: rgb(93, 75, 255) !important ;
+  background-color: rgb(75, 93, 255) !important ;
   border: none !important;
   color: white !important;
   font-size: 20px !important;
@@ -275,7 +284,7 @@ textarea {
 }
 
 .alert-box button {
-  background-color: rgb(60, 45, 190) !important;
+  background-color: rgb(45, 72, 190) !important;
   border: none !important;
   margin-top: 10px !important;
   transition: all 0.2s ease !important;
@@ -365,3 +374,62 @@ textarea {
   background: rgb(59, 95, 255) !important;
   color: rgb(255, 255, 255) !important;
 }
+
+
+
+
+/* Scrollbar */
+body::-webkit-scrollbar {
+  width: 0rem !important;
+}
+
+body::-webkit-scrollbar-track {
+  background: #ececec;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #929292 !important;
+  border-radius: 50px;
+}
+
+
+::placeholder {
+  color: rgb(148, 148, 148);
+  opacity: 1;
+}
+
+
+.input-group-append span{
+  background: #242424;
+  border: none;
+}
+
+.input-group-append .fa-eye {
+  color: rgb(148, 148, 148);
+}
+
+
+button:focus, button:active {
+  outline: none;
+}
+
+
+.bighead_container {
+  margin-top:unset!important;
+  max-width:100vw!important;
+  padding:unset!important;
+  background: url('https://media.giphy.com/media/hVbErjjtKCIHb24j4y/giphy.gif');
+}
+
+.inputs-form-segregate {
+  margin-left:10px;
+}
+
+.nav-pills a {
+  color: white;
+}
+
+.nav-link .active {
+  border-radius: 20px!important;
+}
+

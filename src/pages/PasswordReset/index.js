@@ -60,6 +60,7 @@ const PasswordReset = () => {
                 <Form.Label>🍄 Enter the code you received</Form.Label>
                 <Form.Control
                   type="text"
+                  placeholder="The secret key we sent you"
                   value={code}
                   onChange={(e) => setCode(e.target.value)}
                   autoComplete="off"
@@ -69,6 +70,7 @@ const PasswordReset = () => {
                 <Form.Label>🍄 Enter your new password</Form.Label>
                 <Form.Control
                   type="password"
+                  placeholder="Your new secret key"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   autoComplete="off"
@@ -93,6 +95,7 @@ const PasswordReset = () => {
             <Form.Label>🍄 Enter your email</Form.Label>
             <Form.Control
               type="email"
+              placeholder="Your digital address"
               htmlSize={40}
               value={email}
               onChange={(e) => {

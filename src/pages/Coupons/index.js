@@ -14,13 +14,14 @@ const Coupons = () => {
   };
 
   return (
-    <Container className="my-4 h-100">
+    <>
+    <Container className="my-4 bighead_container">
       <div className="center-content search-form">
-        <legend className="searchBoxText">🧙 filters</legend>
+        {/* <legend className="searchBoxText text-center">🧙 filters</legend> */}
 
         <Form className="my-4 search-form-inside" inline>
-          <Form.Group className="search-form-inside">
-            <Form.Label className="my-1 mr-2">▶️ Search</Form.Label>
+          <Form.Group className="search-form-inside inputs-form-segregate">
+            <Form.Label className="my-1 mr-3">▶️ Search</Form.Label>
             <Form.Control
               className="my-1 mr-2"
               type="text"
@@ -31,8 +32,8 @@ const Coupons = () => {
               onChange={handleChange}
             />
           </Form.Group>
-          <Form.Group className="search-form-inside">
-            <Form.Label className="my-1 mr-2">💠 Category</Form.Label>
+          <Form.Group className="search-form-inside inputs-form-segregate">
+            <Form.Label className="my-1 mr-3">💠 Category</Form.Label>
             <Form.Control
               as="select"
               name="category"
@@ -64,6 +65,9 @@ const Coupons = () => {
           </Form.Group>
         </Form>
       </div>
+      </Container>
+      
+      <Container className="my-4 h-100">
       <legend className="searchBoxText text-center">
         🤗 available coupons
       </legend>
@@ -95,6 +99,7 @@ const Coupons = () => {
         </Tab>
       </Tabs>
     </Container>
+    </>
   );
 };
 
