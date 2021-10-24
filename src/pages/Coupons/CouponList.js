@@ -20,7 +20,7 @@ const CouponList = ({ coupons, listCoupons, filters }) => {
       </h5>
       <hr />
       <p>
-        You can view this coupon in the 'My Coupons' section{" "}
+        You can see this coupon in the 'My Coupons' section{" "}
         <img
           src="https://media.giphy.com/media/w6YCfXHS6QZjeHlVpI/giphy.gif"
           width="30px"
@@ -62,7 +62,7 @@ const CouponList = ({ coupons, listCoupons, filters }) => {
       <div className="row">
         {coupons.couponList.map((coupon, index) =>
           index <= endIndex ? (
-            <div key={coupon._id} className="col-lg-6">
+            <div key={coupon._id} className="col-lg-4">
               <CouponCard
                 coupon={coupon}
                 showBuy={true}

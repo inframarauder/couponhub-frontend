@@ -39,8 +39,8 @@ const Header = ({ auth, logout }) => {
               <Dropdown.Toggle id="dropdown-basic">
                 {
                   <img
-                    src="https://media.giphy.com/media/JUHO9F08TV1WoaBH6G/giphy.gif"
-                    width="60px"
+                    src="https://media.giphy.com/media/3dbEAOOmPXnTpMqgF5/giphy.gif"
+                    width="44px"
                     alt="dropdown-toggle-gif"
                   />
                 }
