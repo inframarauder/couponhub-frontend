@@ -13,7 +13,7 @@ const CouponList = ({ coupons, listCoupons, filters }) => {
 
   const successToast = (code) => (
     <div className="text-center">
-      <p>🦄😇 Your coupon code is </p>
+      <p>🦄 Your coupon code is </p>
       <hr />
       <h5>
         <b>{code}</b>
@@ -78,11 +78,16 @@ const CouponList = ({ coupons, listCoupons, filters }) => {
       {endIndex < coupons.couponList.length - 1 && (
         <div className="center-content">
           <Button
-            variant="primary"
-            onClick={() => setEndIndex(endIndex + 4)}
-            size="lg"
+            className="search-results"
+            
+            onClick={() => setEndIndex(endIndex + 6)}
+            size="md"
+            style={{
+              border : "none!important",
+              margin: "40px 0px!important"
+            }}
           >
-            .... Show More
+            Show more ...
           </Button>
         </div>
       )}
