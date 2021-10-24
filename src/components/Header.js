@@ -67,12 +67,14 @@ const Header = ({ auth, logout }) => {
                       fontWeight: "700",
                     }}
                   >
-                    {auth.user?.credits}{" "}
                     <img
                       src="https://media.giphy.com/media/QxjapRWD37qqPfI5xy/giphy.gif"
                       width="30px"
                       alt="credits-gif"
                     />
+                    
+                    {auth.user?.credits}{" "}
+                    
                   </span>
                 </Dropdown.Item>
                 <hr />

@@ -86,6 +86,25 @@ const CouponCard = ({ coupon, showBuy, handleBuy, showReport }) => {
               {coupon.category}
             </span>
           )}
+          {coupon.type && (
+            <span className="expiry_date"
+            style={{
+              background: "rgb(255, 150, 29)",
+              padding: "3px 8px",
+              margin: "2px 0px 5px 6px",
+              borderRadius: "5px",
+              color: "white !important",
+              textAlign: "center",
+              whiteSpace: "nowrap",
+              fontWeight: "700",
+              position: "relative",
+              top: "-8px",
+              fontSize: "12px",
+            }}
+            >
+              {coupon.type}
+            </span>
+          )}
           <Card.Title style={{ marginTop: "5px" }}>
             <b>{coupon.code}</b>
           </Card.Title>
