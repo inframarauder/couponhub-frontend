@@ -35,7 +35,7 @@ const CouponCard = ({ coupon, showBuy, handleBuy, showReport }) => {
     <Spinner />
   ) : (
     <>
-      <Card className="my-4" style={{ height: "22rem" }}>
+      <Card className="my-4" style={{ height: "24rem" }}>
         <Card.Header>
           <Card.Text>
             <span>

@@ -65,7 +65,7 @@ const MidSection = ({ auth }) => {
                     size="lg"
                     onClick={() => (window.location.href = "/signup")}
                   >
-                    Sign Up 🤯
+                    🤯 Sign Up
                   </Button>
                   <Button
                     className="sign_up_button"
@@ -78,7 +78,7 @@ const MidSection = ({ auth }) => {
                     size="lg"
                     onClick={() => (window.location.href = "/login")}
                   >
-                    Log in 😋
+                    😋 Log in
                   </Button>
                 </p>
                 <br />
