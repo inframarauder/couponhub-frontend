@@ -31,7 +31,7 @@ const MyCoupons = ({ coupons, listCoupons }) => {
           <div className="text-center" style={{ margin: "auto" }}>
             <p>You currently have no coupons</p>
             <a href="/coupons">
-              <Button className="submit_button">Back to Explore 😃</Button>
+              <Button className="submit_button">🏕️ Back to Explore</Button>
             </a>
           </div>
         )}

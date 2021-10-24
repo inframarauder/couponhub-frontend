@@ -15,8 +15,16 @@ const Coupons = () => {
 
   return (
     <>
-    <Container className="my-4 bighead_container">
-      <div className="center-content search-form">
+    <Container className="bighead_container"
+    style={{ marginTop : "0px!important",
+             maxWidth : "100vw!important",
+             padding : "unset!important",
+      }}>
+      <div className="center-content search-form"
+      style={{ marginTop : "unset!important",
+      maxWidth : "100vw!important",
+      paddingTop : "2rem!important",
+      background : "url('https://media.giphy.com/media/hVbErjjtKCIHb24j4y/giphy.gif')",}}>
         {/* <legend className="searchBoxText text-center">🧙 filters</legend> */}
 
         <Form className="my-4 search-form-inside" inline>

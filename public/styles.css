@@ -15,7 +15,7 @@ body {
 }
 
 a {
-  color : #49a1ff!important;
+  color : #ffffff!important;
   transition: all 0.2s ease !important;
 }
 a:hover {
@@ -88,7 +88,7 @@ a:hover {
 }
 
 .buy_button:hover {
-  background-color: rgb(40, 122, 204) !important;
+  background-color: rgb(107, 91, 255) !important;
 }
 
 input {
@@ -173,7 +173,7 @@ textarea {
   transition: all 0.2s ease !important;
 }
 .form_button:hover {
-  background-color: rgb(40, 122, 204) !important;
+  background-color: rgb(50, 139, 255) !important;
 }
 
 .search-form {
@@ -224,6 +224,10 @@ textarea {
   transition: all 0.2s ease !important;
 }
 
+.card-header {
+  padding-bottom: 1px!important;
+}
+
 .coupon_tag {
   font-weight: 700;
   padding: 3px 6px;
@@ -238,11 +242,12 @@ textarea {
 .coupon_title {
   font-weight: 700;
   color: rgb(99, 161, 253);
-  font-size: 17px;
+  font-size: 22px;
+  margin-top: 12px;
 }
 
 .Toastify__toast--success {
-  background: #1c80eb !important;
+  background: #318bff !important;
   transition: all 0.2s ease !important;
 }
 
@@ -394,9 +399,14 @@ body::-webkit-scrollbar-thumb {
 
 
 ::placeholder {
-  color: rgb(148, 148, 148);
+  color: rgb(148, 148, 148)!important;
   opacity: 1;
 }
+
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
 
 
 .input-group-append span{
@@ -426,10 +436,38 @@ button:focus, button:active {
 }
 
 .nav-pills a {
-  color: white;
+  color: white!important;
 }
 
-.nav-link .active {
+.nav-item {
   border-radius: 20px!important;
+  padding-left:8px;
+  padding-right:8px;
 }
 
+.report_button {
+  background: rgb(255, 79, 88)!important;
+  font-weight: 600!important;
+}
+
+.modal-content {
+  background:rgb(20, 20, 20)!important;
+  border: 1px solid rgba(255,255,255, 0.05)!important;
+}
+
+.modal-title {
+  color: rgb(255, 255, 255)!important;
+}
+.modal-header {
+  border-bottom : 1px solid rgba(255,255,255, 0.05)!important;
+}
+
+.close span{
+  color:rgb(241, 241, 241)!important;
+  font-weight:400;
+}
+
+
+.nav-pills .active {
+  background-color: rgb(107, 91, 255)!important;
+}

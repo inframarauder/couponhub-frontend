@@ -35,20 +35,16 @@ const CouponCard = ({ coupon, showBuy, handleBuy, showReport }) => {
     <Spinner />
   ) : (
     <>
-      <Card className="my-4" style={{ height: "25rem" }}>
+      <Card className="my-4" style={{ height: "22rem" }}>
         <Card.Header>
           <Card.Text>
             <span>
-              <div className="row">
-                <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                   <b className="coupon_title">{coupon.title}</b>
-                </div>
                 {/* <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                   <small className="coupon_tag" style={{ float: "left" }}>
                     {coupon.type.toUpperCase()}
                   </small>
                 </div> */}
-              </div>
             </span>
           </Card.Text>
         </Card.Header>
@@ -58,7 +54,7 @@ const CouponCard = ({ coupon, showBuy, handleBuy, showReport }) => {
             style={{
               background: "#ff4b7f",
               padding: "3px 8px",
-              margin: "5px 0px",
+              margin: "2px 0px",
               borderRadius: "5px",
               color: "white !important",
               textAlign: "center",
@@ -72,9 +68,23 @@ const CouponCard = ({ coupon, showBuy, handleBuy, showReport }) => {
             @ {coupon.redeemPlatform}
           </span>
           {coupon.category && (
-            <small className="coupon_tag" style={{ float: "right" }}>
-              {coupon.category.toUpperCase()}
-            </small>
+            <span className="expiry_date"
+            style={{
+              background: "rgb(255, 150, 29)",
+              padding: "3px 8px",
+              margin: "2px 0px 5px 6px",
+              borderRadius: "5px",
+              color: "white !important",
+              textAlign: "center",
+              whiteSpace: "nowrap",
+              fontWeight: "700",
+              position: "relative",
+              top: "-8px",
+              fontSize: "12px",
+            }}
+            >
+              {coupon.category}
+            </span>
           )}
           <Card.Title style={{ marginTop: "5px" }}>
             <b>{coupon.code}</b>
@@ -98,11 +108,6 @@ const CouponCard = ({ coupon, showBuy, handleBuy, showReport }) => {
               }}
             >
               {new Date(coupon.expiryDate).toDateString()}{" "}
-              <img
-                src="https://media.giphy.com/media/3dbEAOOmPXnTpMqgF5/giphy.gif"
-                width="30px"
-                alt="expiry-gif"
-              />
             </span>
           </Card.Text>
           <Card.Text>
@@ -128,8 +133,8 @@ const CouponCard = ({ coupon, showBuy, handleBuy, showReport }) => {
           </Card.Footer>
         )}
         {showReport && (
-          <Card.Footer className="center-content">
-            <Button variant="danger" onClick={handleShow}>
+          <Card.Footer>
+            <Button variant="danger" className="report_button" onClick={handleShow}>
               Report
             </Button>
           </Card.Footer>
@@ -137,12 +142,12 @@ const CouponCard = ({ coupon, showBuy, handleBuy, showReport }) => {
       </Card>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Report Coupon</Modal.Title>
+          <Modal.Title>😔 Report coupon</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={handleSubmit}>
             <Form.Group>
-              <Form.Label>Please state a reason</Form.Label>
+              <Form.Label style={{ color: "#ffffff",}}>🪧 State a reason</Form.Label>
               <Form.Control
                 as="textarea"
                 rows={7}
@@ -152,8 +157,8 @@ const CouponCard = ({ coupon, showBuy, handleBuy, showReport }) => {
               />
             </Form.Group>
             <Form.Group>
-              <Button variant="danger" type="submit">
-                Report
+              <Button variant="danger" className="report_button" type="submit">
+              ✨ Submit report
               </Button>
             </Form.Group>
           </Form>
